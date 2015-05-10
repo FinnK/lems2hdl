@@ -1,0 +1,7 @@
+
+<!-- 
+????
+ -->
+ 
+<izhikevichCell id="neuron_model" v0 = "-60mV" thresh = "30mV" a ="0.02" b = "-0.1" c = "-55" d = "6"/>
+<rampGeneratorDL id="i1" delay="30ms" duration="170ms" startAmplitude="-32" finishAmplitude="50" baselineAmplitude="-32"/>

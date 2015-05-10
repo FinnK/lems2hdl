@@ -1,0 +1,12 @@
+
+<ionChannelPassive id="passiveChan" conductance="10pS"/>
+<baseCell id="neuron_model" type="pointCellCondBased" C="10pF" v0="-55mV" thresh="20mV">
+<channelPopulation id="leak" ionChannel="passiveChan" number="300" erev="-55mV"/>
+</baseCell>
+
+
+<blockingPlasticSynapse id="stpSynDep" gbase="1nS" erev="0mV" tauRise="0.1ms" tauDecay="40ms">
+<plasticityMechanism id="depMechanism1" type="tsodyksMarkramDepMechanism" initReleaseProb = "0.5" tauRec = "300 ms"/>
+</blockingPlasticSynapse>
+
+

@@ -1,0 +1,13 @@
+
+    <!-- Example single neuron with synapses -->
+
+    <!-- Main NeuroML2 content -->
+	
+	<iafRefCell id="neuron_model" leakConductance="0.03nS" 
+	leakReversal="-70mV" thresh="-55mV" reset="-70mV" 
+	C="4pF" refract="10ms"/>
+	<expOneSynapse id="SynapseModel" gbase="0.25nS" 
+	erev="0mV" tauDecay="3ms"/>
+    
+    <!-- End of NeuroML2 content -->
+

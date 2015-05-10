@@ -1,0 +1,17 @@
+
+<!-- 
+RS (d is 8 in original paper by Izhikevich)
+RS (regular spiking)
+neurons are the most typical neurons in the
+cortex. When presented with a prolonged stimulus (injected step
+of dc-current in Fig. 2RS, bottom) the neurons fire a few spikes
+with short interspike period and then the period increases. This is
+called the spike frequency adaptation. Increasing the strength of
+the injected dc-current increases the interspike frequency, though
+it never becomes too fast because of large spike-afterhyperpolar-
+izations. In the model, this corresponds to
+c = -65mV (deep voltage reset) and d=8 (large after-spike jump of u)
+ -->
+
+<izhikevichCell id="neuron_model" v0 = "-70mV" thresh = "30mV" a ="0.02" b = "0.2" c = "-65" d = "6"/><!-- regular spiking (rs) -->
+<pulseGeneratorDL id="i1" delay="20ms" duration="2000ms" amplitude="14" />

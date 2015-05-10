@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1416329369031
+Build-Jdk: 1.6.0_32
+Built-By: root
+Bundle-ManifestVersion: 2
+Bundle-Name: ie.nuigalway.lems2hdl
+Bundle-SymbolicName: ie.nuigalway.lems2hdl
+Bundle-Version: 0.0.1
+Created-By: Apache Maven Bundle Plugin
+Export-Package: test_neuroml_lems;uses:="org.lemsml.jlems.io.logging,org
+ .lemsml.jlems.io.out,org.lemsml.jlems.io.util,org.lemsml.jlems.viz.data
+ display,org.lemsml.jlems.io.reader,org.lemsml.jlems.core.type,org.lemsm
+ l.jlems.core.sim,org.lemsml.jlems.core.xml,org.lemsml.export.vhdl,org.l
+ emsml.jlems.core.run";version="0.0.1"
+Import-Package: org.lemsml.export.vhdl;version="[1.3,2)",org.lemsml.jlem
+ s.core.run;version="[0.9,1)",org.lemsml.jlems.core.sim;version="[0.9,1)
+ ",org.lemsml.jlems.core.type;version="[0.9,1)",org.lemsml.jlems.core.xm
+ l;version="[0.9,1)",org.lemsml.jlems.io.logging;version="[0.9,1)",org.l
+ emsml.jlems.io.out;version="[0.9,1)",org.lemsml.jlems.io.reader;version
+ ="[0.9,1)",org.lemsml.jlems.io.util;version="[0.9,1)",org.lemsml.jlems.
+ viz.datadisplay;version="[0.9,1)"
+Tool: Bnd-1.50.0

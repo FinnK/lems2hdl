@@ -1,0 +1,13 @@
+<!-- 
+IB (intrinsically bursting)
+neurons fire a stereotypical burst of
+spikes followed by repetitive single spikes (Fig. 2IB). In the
+model, this corresponds to c= -55mV (high voltage reset)
+and d=4(large after-spike jump of u). During the initial burst,
+variable u builds up and eventually switches the dynamics from
+bursting to spiking
+	
+ -->
+ 
+<izhikevichCell id="neuron_model" v0 = "-70mV" thresh = "30mV" a ="0.02" b = "0.2" c = "-55" d = "4"/>
+<pulseGeneratorDL id="i1" delay="20ms" duration="2000ms" amplitude="10" />

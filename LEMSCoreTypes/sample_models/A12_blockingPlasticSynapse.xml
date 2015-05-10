@@ -1,0 +1,13 @@
+
+
+
+<iafRefCell id="neuron_model" leakConductance="0.03nS" 
+leakReversal="-70mV" thresh="-55mV" reset="-70mV" 
+C="14pF" refract="10ms"/>
+
+<blockingPlasticSynapse id="stpSynDepFac" gbase="1nS" erev="0mV" tauRise="0.1ms" tauDecay="40ms">
+<plasticityMechanism id="depMechanism1" type="tsodyksMarkramDepFacMechanism" initReleaseProb = "0.5" tauFac = "200 ms" tauRec = "300 ms"/>
+</blockingPlasticSynapse>
+
+
+

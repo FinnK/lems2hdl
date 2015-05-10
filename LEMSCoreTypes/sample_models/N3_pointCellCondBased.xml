@@ -1,0 +1,39 @@
+
+    <!-- Example single neuron with synapses -->
+
+    <!-- Main NeuroML2 content -->
+    
+    <ionChannelPassive id="passive" conductance="10pS"/>
+    
+    <ionChannelHH id="na" conductance="10pS">
+    
+       <gateHHrates id="m" instances="3">
+            <forwardRate id="forwardRatem1" type="HHExpLinearRate" rate="1per_ms" midpoint="-40mV" scale="10mV"/>
+            <reverseRate id="reverseRatem1" type="HHExpRate" rate="4per_ms" midpoint="-65mV" scale="-18mV"/>
+       </gateHHrates>
+    
+       <gateHHrates id="h" instances="1">
+           <forwardRate id="forwardRateh1" type="HHExpRate" rate="0.07per_ms" midpoint="-65mV" scale="-20mV"/>
+           <reverseRate id="reverseRateh1" type="HHSigmoidRate" rate="1per_ms" midpoint="-35mV" scale="10mV"/>
+           
+       </gateHHrates>
+    
+    </ionChannelHH>
+    
+    
+    <ionChannelHH id="k" conductance="10pS">
+        <gateHHrates id="n" instances="4">
+            <forwardRate id="forwardRaten1" type="HHExpLinearRate" rate="0.1per_ms" midpoint="-55mV" scale="10mV"/>
+            <reverseRate id="reverseRaten1" type="HHExpRate" rate="0.125per_ms" midpoint="-65mV" scale="-80mV"/>
+        </gateHHrates>
+    </ionChannelHH>
+	
+    <pointCellCondBased id="neuron_model" C="10pF"  v0="-65mV" thresh="20mV">
+        <channelPopulation id="leak" ionChannel="passive" number="300" erev="-54.3mV"/>
+        <channelPopulation id="naChans" ionChannel="na" number="120000" erev="50mV"/><!-- -->
+        <channelPopulation id="kChans" ionChannel="k" number="36000" erev="-77mV"/>
+    </pointCellCondBased>
+    
+    <expOneSynapse id="synapsemodel" gbase="1nS" erev="0mV" tauDecay="3ms" />
+    
+    <!-- End of NeuroML2 content -->

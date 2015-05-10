@@ -1,0 +1,45 @@
+
+<Lems>
+
+    <!-- Common LEMS and NeuroML2 simulation components to complete an inserted neuron_model_instance with synapses -->
+
+    <!-- Specify which component to run -->
+    <Target component="sim1" />
+
+    <!-- Include core NeuroML2 ComponentType definitions -->
+
+    <!-- The above file includes NeuroMLCoreDimensions.xml, Channels.xml,
+    Synapses.xml and Inputs.xml -->
+    <Include file="../CoreTypes/Networks.xml" />
+    <Include file="../CoreTypes/Simulation.xml" />
+    <Include file="../CoreTypes/PyNN.xml" />
+
+
+    <!-- Main NeuroML2 content -->
+	
+	[content neuron_model_instance]
+	[content synapse_model_instance]
+	
+	
+    <network id="net1">
+        <population id="neuron_model_instance" component="neuron_model" size="1" />
+	[content population_instance]
+    </network>
+
+    <!-- End of NeuroML2 content -->
+
+
+    <Simulation id="sim1" length="[content simulationTime]" step="[content simulationTimeStep]" target="net1">
+
+        <OutputFile id="results" path="result" fileName="results.csv">
+			[content outputcolumnsneuron]
+        </OutputFile>
+		
+        <OutputFile id="stimulus" path="result" fileName="stimulus.csv">
+			[content outputcolumnsstim]
+        </OutputFile>
+
+    </Simulation>
+
+
+</Lems>

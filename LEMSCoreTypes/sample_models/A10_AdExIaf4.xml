@@ -1,0 +1,6 @@
+<!-- adExRebound -->
+
+<adExIaFCell id="neuron_model" C="28.1pF" gL="30nS" EL="-60mV" reset="-51mV" VT = "-54mV" thresh = "-30mV" delT="2mV" tauw="150ms" a ="200nS" b = "0.1nA" refract="0ms"/>
+
+<pulseGenerator id="pulseGen2" delay="150ms" duration="50ms" amplitude="-0.5nA" />
+

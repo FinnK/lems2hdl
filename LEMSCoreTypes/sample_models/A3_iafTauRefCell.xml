@@ -1,0 +1,10 @@
+
+    <!-- Example single neuron with synapses -->
+
+    <!-- Main NeuroML2 content -->
+    <iafTauRefCell id="neuron_model" leakReversal="-50mV" thresh="-55mV"
+                   reset="-70mV" tau="30ms" refract="5ms"/>
+
+	
+    <!-- End of NeuroML2 content -->
+
