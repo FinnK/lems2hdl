@@ -1,0 +1,4 @@
+vhdl work "top_synth.vhdl"
+vhdl work "neuron_model.vhdl"
+vhdl work "SynapseModel.vhdl"
+vhdl work "testbench.vhdl"
