@@ -28,7 +28,6 @@ Port (
   step_once_go : in STD_LOGIC; --signals to the neuron from the core that a time step is to be simulated
   step_once_complete : out STD_LOGIC; --signals to the core that a time step has finished
   eventport_in_spike_aggregate : in STD_LOGIC_VECTOR(511 downto 0);
-  SelectSpikesIn			: Std_logic_vector(4607 downto 0) := (others => '0');
   eventport_out_spike : out STD_LOGIC;
   param_voltage_v0 : in sfixed (2 downto -22);
   param_none_a : in sfixed (18 downto -13);
@@ -79,7 +78,8 @@ signal subprocess_dyn_ready : STD_LOGIC := '0';
 signal subprocess_model_ready : STD_LOGIC := '1';
 signal subprocess_all_ready_shotdone : STD_LOGIC := '1';
 signal subprocess_all_ready_shot : STD_LOGIC := '0';
-signal subprocess_all_ready : STD_LOGIC := '0';
+signal subprocess_all_ready : STD_LOGIC := '0';signal i1_step_once_complete_fired : STD_LOGIC := '1';
+
 
 signal step_once_complete_fired : STD_LOGIC := '1';
 signal Component_done : STD_LOGIC := '0';
@@ -198,7 +198,7 @@ end if;
 end process derived_variable_process_syn;
 ---------------------------------------------------------------------
 
-dynamics_pre_process_comb :process ( sysparam_time_timestep, param_voltage_MVOLT, statevariable_voltage_v_in , statevariable_none_U_in , param_time_MSEC, derivedvariable_none_ISyn ,param_time_inv_MSEC_inv,param_voltage_inv_MVOLT_inv , param_voltage_MVOLT, param_none_a, param_none_b, statevariable_voltage_v_in , statevariable_none_U_in , param_time_MSEC  )
+dynamics_pre_process_comb :process ( sysparam_time_timestep, param_voltage_MVOLT, statevariable_voltage_v_in , statevariable_none_U_in , derivedvariable_none_ISyn , param_time_MSEC,param_time_inv_MSEC_inv,param_voltage_inv_MVOLT_inv , param_voltage_MVOLT, statevariable_voltage_v_in , statevariable_none_U_in , param_none_b, param_none_a, param_time_MSEC  )
 begin 
 
 end process dynamics_pre_process_comb;
@@ -214,7 +214,7 @@ end process dynamics_pre_process_syn;
 --No dynamics with complex equations found
 subprocess_dyn_int_ready <= '1';
 
-state_variable_process_dynamics_comb :process (sysparam_time_timestep, param_voltage_MVOLT, statevariable_voltage_v_in , statevariable_none_U_in , param_time_MSEC, derivedvariable_none_ISyn ,param_time_inv_MSEC_inv,param_voltage_inv_MVOLT_inv , param_voltage_MVOLT, param_none_a, param_none_b, statevariable_voltage_v_in , statevariable_none_U_in , param_time_MSEC ,statevariable_voltage_v_in,statevariable_none_U_in)
+state_variable_process_dynamics_comb :process (sysparam_time_timestep, param_voltage_MVOLT, statevariable_voltage_v_in , statevariable_none_U_in , derivedvariable_none_ISyn , param_time_MSEC,param_time_inv_MSEC_inv,param_voltage_inv_MVOLT_inv , param_voltage_MVOLT, statevariable_voltage_v_in , statevariable_none_U_in , param_none_b, param_none_a, param_time_MSEC ,statevariable_voltage_v_in,statevariable_none_U_in)
 begin
   statevariable_voltage_noregime_v_temp_1_next <= resize(statevariable_voltage_v_in + (   (  to_sfixed ( 0.04 ,0 , -27 ) * statevariable_voltage_v_in * statevariable_voltage_v_in * param_voltage_inv_MVOLT_inv + to_sfixed ( 5 ,3 , -1 ) * statevariable_voltage_v_in +   (  to_sfixed ( 140.0 ,8 , -1 ) - statevariable_none_U_in + derivedvariable_none_ISyn  )   * param_voltage_MVOLT  )  * param_time_inv_MSEC_inv ) * sysparam_time_timestep,2,-22);
   statevariable_none_noregime_U_temp_1_next <= resize(statevariable_none_U_in + ( param_none_a *   (  param_none_b * statevariable_voltage_v_in * param_voltage_inv_MVOLT_inv - statevariable_none_U_in  )   * param_time_inv_MSEC_inv ) * sysparam_time_timestep,18,-13);
@@ -238,7 +238,7 @@ end process state_variable_process_dynamics_syn;
 ---------------------------------------------------------------------
 	-- EDState variable: $par.name Driver Process
 	---------------------------------------------------------------------
-state_variable_process_comb_0 :process (sysparam_time_timestep,init_model,param_voltage_v0,param_voltage_thresh,statevariable_voltage_v_in,param_voltage_MVOLT,param_none_c,param_none_d,statevariable_none_U_in,statevariable_voltage_noregime_v_temp_1,param_voltage_MVOLT,statevariable_voltage_v_in,statevariable_none_U_in,param_time_MSEC,derivedvariable_none_ISyn,param_time_inv_MSEC_inv,param_voltage_inv_MVOLT_inv)
+state_variable_process_comb_0 :process (sysparam_time_timestep,init_model,param_voltage_v0,param_voltage_thresh,statevariable_voltage_v_in,param_voltage_MVOLT,param_none_c,statevariable_none_U_in,param_none_d,statevariable_voltage_noregime_v_temp_1,param_voltage_MVOLT,statevariable_voltage_v_in,statevariable_none_U_in,derivedvariable_none_ISyn,param_time_MSEC,param_time_inv_MSEC_inv,param_voltage_inv_MVOLT_inv)
 variable statevariable_voltage_v_temp_1 : sfixed (2 downto -22);
 variable statevariable_voltage_v_temp_2 : sfixed (2 downto -22);
 begin
@@ -254,7 +254,7 @@ end process;
 ---------------------------------------------------------------------
 	-- EDState variable: $par.name Driver Process
 	---------------------------------------------------------------------
-state_variable_process_comb_1 :process (sysparam_time_timestep,init_model,param_voltage_v0,param_voltage_MVOLT,param_none_b,param_voltage_v0,param_none_div_voltage_b_div_MVOLT,param_voltage_thresh,statevariable_voltage_v_in,param_voltage_MVOLT,param_none_c,param_none_d,statevariable_none_U_in,statevariable_none_noregime_U_temp_1,param_voltage_MVOLT,param_none_a,param_none_b,statevariable_voltage_v_in,statevariable_none_U_in,param_time_MSEC)
+state_variable_process_comb_1 :process (sysparam_time_timestep,init_model,param_voltage_v0,param_voltage_MVOLT,param_none_b,param_voltage_v0,param_none_div_voltage_b_div_MVOLT,param_voltage_thresh,statevariable_voltage_v_in,param_voltage_MVOLT,param_none_c,statevariable_none_U_in,param_none_d,statevariable_none_noregime_U_temp_1,param_voltage_MVOLT,statevariable_voltage_v_in,statevariable_none_U_in,param_none_b,param_none_a,param_time_MSEC)
 variable statevariable_none_U_temp_1 : sfixed (18 downto -13);
 variable statevariable_none_U_temp_2 : sfixed (18 downto -13);
 begin
@@ -270,7 +270,7 @@ end process;
 
 ------------------------------------------------------------------------------------------------------
 
-eventport_driver0 :process ( clk,sysparam_time_timestep,init_model, param_voltage_thresh, statevariable_voltage_v_in , param_voltage_MVOLT, param_none_c, param_none_d, statevariable_none_U_in  )
+eventport_driver0 :process ( clk,sysparam_time_timestep,init_model, param_voltage_thresh, statevariable_voltage_v_in , param_voltage_MVOLT, param_none_c, statevariable_none_U_in , param_none_d )
 variable eventport_out_spike_temp_1 : std_logic;
 variable eventport_out_spike_temp_2 : std_logic;
 

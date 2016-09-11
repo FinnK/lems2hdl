@@ -121,7 +121,7 @@ begin
 -- Child EDComponent Instantiations and corresponding internal variables
 ---------------------------------------------------------------------
 
-derived_variable_pre_process_comb :process ( sysparam_time_timestep, param_voltage_midpoint, requirement_voltage_v , param_voltage_scale,param_voltage_inv_scale_inv, derivedvariable_none_x , param_per_time_rate,exp_r_exponential_result1, derivedvariable_none_x , param_per_time_rate, derivedvariable_none_x  )
+derived_variable_pre_process_comb :process ( sysparam_time_timestep, param_voltage_midpoint, param_voltage_scale, requirement_voltage_v ,param_voltage_inv_scale_inv, derivedvariable_none_x , param_per_time_rate,exp_r_exponential_result1, derivedvariable_none_x , param_per_time_rate, derivedvariable_none_x  )
 begin 
   pre_exp_r_exponential_result1_next <=  resize(   (  to_sfixed ( 0 ,0 , -1 ) - derivedvariable_none_x  ) ,18,-13);
 
@@ -158,7 +158,7 @@ port map (	clk => clk,
 
 
 
-derived_variable_process_comb :process ( sysparam_time_timestep, param_voltage_midpoint, requirement_voltage_v , param_voltage_scale,param_voltage_inv_scale_inv, derivedvariable_none_x , param_per_time_rate,exp_r_exponential_result1, derivedvariable_none_x , param_per_time_rate, derivedvariable_none_x  )
+derived_variable_process_comb :process ( sysparam_time_timestep, param_voltage_midpoint, param_voltage_scale, requirement_voltage_v ,param_voltage_inv_scale_inv, derivedvariable_none_x , param_per_time_rate,exp_r_exponential_result1, derivedvariable_none_x , param_per_time_rate, derivedvariable_none_x  )
 begin
   derivedvariable_none_x_next <= resize((   (  requirement_voltage_v - param_voltage_midpoint  )   * param_voltage_inv_scale_inv ),18,-13);
 
@@ -173,7 +173,7 @@ begin
   end if;
 end process derived_variable_process_comb;
 uut_delayDone_derivedvariable_forwardRatem1 : delayDone GENERIC MAP(
-  Steps => 10
+  Steps => 2
   )
 PORT MAP(
   clk => clk,

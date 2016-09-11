@@ -125,7 +125,7 @@ eventport_in_spike_aggregate(0) <= s(0);
    end loop;
     
    
-   wait;
+   assert false report "end of simulation" severity failure;
 
  end process receive_data;
 

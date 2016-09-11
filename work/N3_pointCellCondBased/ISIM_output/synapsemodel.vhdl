@@ -171,7 +171,7 @@ end process state_variable_process_dynamics_syn;
 ---------------------------------------------------------------------
 	-- EDState variable: $par.name Driver Process
 	---------------------------------------------------------------------
-state_variable_process_comb_0 :process (sysparam_time_timestep,init_model,eventport_in_in,param_conductance_gbase,statevariable_conductance_g_in,statevariable_conductance_noregime_g_temp_1,param_time_tauDecay,statevariable_conductance_g_in,param_time_inv_tauDecay_inv)
+state_variable_process_comb_0 :process (sysparam_time_timestep,init_model,eventport_in_in,statevariable_conductance_g_in,param_conductance_gbase,statevariable_conductance_noregime_g_temp_1,param_time_tauDecay,statevariable_conductance_g_in,param_time_inv_tauDecay_inv)
 variable statevariable_conductance_g_temp_1 : sfixed (-22 downto -53);
 variable statevariable_conductance_g_temp_2 : sfixed (-22 downto -53);
 begin

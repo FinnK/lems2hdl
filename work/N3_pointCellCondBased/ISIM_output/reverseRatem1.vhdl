@@ -109,7 +109,7 @@ begin
 -- Child EDComponent Instantiations and corresponding internal variables
 ---------------------------------------------------------------------
 
-derived_variable_pre_process_comb :process ( sysparam_time_timestep, param_voltage_midpoint, requirement_voltage_v , param_voltage_scale, param_per_time_rate,param_voltage_inv_scale_inv,exp_r_exponential_result1 )
+derived_variable_pre_process_comb :process ( sysparam_time_timestep, param_voltage_midpoint, param_voltage_scale, requirement_voltage_v , param_per_time_rate,param_voltage_inv_scale_inv,exp_r_exponential_result1 )
 begin 
   pre_exp_r_exponential_result1_next <=  resize(   (   (  requirement_voltage_v - param_voltage_midpoint  )  * param_voltage_inv_scale_inv  )  ,18,-13);
 
@@ -146,7 +146,7 @@ port map (	clk => clk,
 
 
 
-derived_variable_process_comb :process ( sysparam_time_timestep, param_voltage_midpoint, requirement_voltage_v , param_voltage_scale, param_per_time_rate,param_voltage_inv_scale_inv,exp_r_exponential_result1 )
+derived_variable_process_comb :process ( sysparam_time_timestep, param_voltage_midpoint, param_voltage_scale, requirement_voltage_v , param_per_time_rate,param_voltage_inv_scale_inv,exp_r_exponential_result1 )
 begin
   derivedvariable_per_time_r_next <= resize(( param_per_time_rate * exp_r_exponential_result1  ),18,-2);
 

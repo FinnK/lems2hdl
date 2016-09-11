@@ -28,7 +28,6 @@ Port (
   step_once_go : in STD_LOGIC; --signals to the neuron from the core that a time step is to be simulated
   step_once_complete : out STD_LOGIC; --signals to the core that a time step has finished
   eventport_in_spike_aggregate : in STD_LOGIC_VECTOR(511 downto 0);
-  SelectSpikesIn			: Std_logic_vector(4607 downto 0) := (others => '0');
   eventport_out_spike : out STD_LOGIC;
   param_voltage_v0 : in sfixed (2 downto -22);
   param_voltage_thresh : in sfixed (2 downto -22);
@@ -64,13 +63,6 @@ Port (
   statevariable_none_naChans_na_m_q_in : in sfixed (18 downto -13);
   derivedvariable_none_naChans_na_m_fcond_out : out sfixed (18 downto -13);
   derivedvariable_none_naChans_na_m_fcond_in : in sfixed (18 downto -13);
-  param_per_time_naChans_na_m_reverseRatem1_rate : in sfixed (18 downto -2);
-  param_voltage_naChans_na_m_reverseRatem1_midpoint : in sfixed (2 downto -22);
-  param_voltage_naChans_na_m_reverseRatem1_scale : in sfixed (2 downto -22);
-  param_voltage_inv_naChans_na_m_reverseRatem1_scale_inv : in sfixed (22 downto -2);
-  exposure_per_time_naChans_na_m_reverseRatem1_r : out sfixed (18 downto -2);
-  derivedvariable_per_time_naChans_na_m_reverseRatem1_r_out : out sfixed (18 downto -2);
-  derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in : in sfixed (18 downto -2);
   param_per_time_naChans_na_m_forwardRatem1_rate : in sfixed (18 downto -2);
   param_voltage_naChans_na_m_forwardRatem1_midpoint : in sfixed (2 downto -22);
   param_voltage_naChans_na_m_forwardRatem1_scale : in sfixed (2 downto -22);
@@ -78,6 +70,13 @@ Port (
   exposure_per_time_naChans_na_m_forwardRatem1_r : out sfixed (18 downto -2);
   derivedvariable_per_time_naChans_na_m_forwardRatem1_r_out : out sfixed (18 downto -2);
   derivedvariable_per_time_naChans_na_m_forwardRatem1_r_in : in sfixed (18 downto -2);
+  param_per_time_naChans_na_m_reverseRatem1_rate : in sfixed (18 downto -2);
+  param_voltage_naChans_na_m_reverseRatem1_midpoint : in sfixed (2 downto -22);
+  param_voltage_naChans_na_m_reverseRatem1_scale : in sfixed (2 downto -22);
+  param_voltage_inv_naChans_na_m_reverseRatem1_scale_inv : in sfixed (22 downto -2);
+  exposure_per_time_naChans_na_m_reverseRatem1_r : out sfixed (18 downto -2);
+  derivedvariable_per_time_naChans_na_m_reverseRatem1_r_out : out sfixed (18 downto -2);
+  derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in : in sfixed (18 downto -2);
   param_none_naChans_na_h_instances : in sfixed (18 downto -13);
   exposure_none_naChans_na_h_fcond : out sfixed (18 downto -13);
   exposure_none_naChans_na_h_q : out sfixed (18 downto -13);
@@ -85,13 +84,6 @@ Port (
   statevariable_none_naChans_na_h_q_in : in sfixed (18 downto -13);
   derivedvariable_none_naChans_na_h_fcond_out : out sfixed (18 downto -13);
   derivedvariable_none_naChans_na_h_fcond_in : in sfixed (18 downto -13);
-  param_per_time_naChans_na_h_reverseRateh1_rate : in sfixed (18 downto -2);
-  param_voltage_naChans_na_h_reverseRateh1_midpoint : in sfixed (2 downto -22);
-  param_voltage_naChans_na_h_reverseRateh1_scale : in sfixed (2 downto -22);
-  param_voltage_inv_naChans_na_h_reverseRateh1_scale_inv : in sfixed (22 downto -2);
-  exposure_per_time_naChans_na_h_reverseRateh1_r : out sfixed (18 downto -2);
-  derivedvariable_per_time_naChans_na_h_reverseRateh1_r_out : out sfixed (18 downto -2);
-  derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in : in sfixed (18 downto -2);
   param_per_time_naChans_na_h_forwardRateh1_rate : in sfixed (18 downto -2);
   param_voltage_naChans_na_h_forwardRateh1_midpoint : in sfixed (2 downto -22);
   param_voltage_naChans_na_h_forwardRateh1_scale : in sfixed (2 downto -22);
@@ -99,6 +91,13 @@ Port (
   exposure_per_time_naChans_na_h_forwardRateh1_r : out sfixed (18 downto -2);
   derivedvariable_per_time_naChans_na_h_forwardRateh1_r_out : out sfixed (18 downto -2);
   derivedvariable_per_time_naChans_na_h_forwardRateh1_r_in : in sfixed (18 downto -2);
+  param_per_time_naChans_na_h_reverseRateh1_rate : in sfixed (18 downto -2);
+  param_voltage_naChans_na_h_reverseRateh1_midpoint : in sfixed (2 downto -22);
+  param_voltage_naChans_na_h_reverseRateh1_scale : in sfixed (2 downto -22);
+  param_voltage_inv_naChans_na_h_reverseRateh1_scale_inv : in sfixed (22 downto -2);
+  exposure_per_time_naChans_na_h_reverseRateh1_r : out sfixed (18 downto -2);
+  derivedvariable_per_time_naChans_na_h_reverseRateh1_r_out : out sfixed (18 downto -2);
+  derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in : in sfixed (18 downto -2);
   param_none_kChans_number : in sfixed (18 downto -13);
   param_voltage_kChans_erev : in sfixed (2 downto -22);
   exposure_current_kChans_i : out sfixed (-28 downto -53);
@@ -115,13 +114,6 @@ Port (
   statevariable_none_kChans_k_n_q_in : in sfixed (18 downto -13);
   derivedvariable_none_kChans_k_n_fcond_out : out sfixed (18 downto -13);
   derivedvariable_none_kChans_k_n_fcond_in : in sfixed (18 downto -13);
-  param_per_time_kChans_k_n_reverseRaten1_rate : in sfixed (18 downto -2);
-  param_voltage_kChans_k_n_reverseRaten1_midpoint : in sfixed (2 downto -22);
-  param_voltage_kChans_k_n_reverseRaten1_scale : in sfixed (2 downto -22);
-  param_voltage_inv_kChans_k_n_reverseRaten1_scale_inv : in sfixed (22 downto -2);
-  exposure_per_time_kChans_k_n_reverseRaten1_r : out sfixed (18 downto -2);
-  derivedvariable_per_time_kChans_k_n_reverseRaten1_r_out : out sfixed (18 downto -2);
-  derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in : in sfixed (18 downto -2);
   param_per_time_kChans_k_n_forwardRaten1_rate : in sfixed (18 downto -2);
   param_voltage_kChans_k_n_forwardRaten1_midpoint : in sfixed (2 downto -22);
   param_voltage_kChans_k_n_forwardRaten1_scale : in sfixed (2 downto -22);
@@ -129,6 +121,13 @@ Port (
   exposure_per_time_kChans_k_n_forwardRaten1_r : out sfixed (18 downto -2);
   derivedvariable_per_time_kChans_k_n_forwardRaten1_r_out : out sfixed (18 downto -2);
   derivedvariable_per_time_kChans_k_n_forwardRaten1_r_in : in sfixed (18 downto -2);
+  param_per_time_kChans_k_n_reverseRaten1_rate : in sfixed (18 downto -2);
+  param_voltage_kChans_k_n_reverseRaten1_midpoint : in sfixed (2 downto -22);
+  param_voltage_kChans_k_n_reverseRaten1_scale : in sfixed (2 downto -22);
+  param_voltage_inv_kChans_k_n_reverseRaten1_scale_inv : in sfixed (22 downto -2);
+  exposure_per_time_kChans_k_n_reverseRaten1_r : out sfixed (18 downto -2);
+  derivedvariable_per_time_kChans_k_n_reverseRaten1_r_out : out sfixed (18 downto -2);
+  derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in : in sfixed (18 downto -2);
   param_time_synapsemodel_tauDecay : in sfixed (6 downto -18);
   param_conductance_synapsemodel_gbase : in sfixed (-22 downto -53);
   param_voltage_synapsemodel_erev : in sfixed (2 downto -22);
@@ -165,7 +164,8 @@ signal subprocess_dyn_ready : STD_LOGIC := '0';
 signal subprocess_model_ready : STD_LOGIC := '1';
 signal subprocess_all_ready_shotdone : STD_LOGIC := '1';
 signal subprocess_all_ready_shot : STD_LOGIC := '0';
-signal subprocess_all_ready : STD_LOGIC := '0';
+signal subprocess_all_ready : STD_LOGIC := '0';signal synapsemodel_step_once_complete_fired : STD_LOGIC := '1';
+
 
 signal step_once_complete_fired : STD_LOGIC := '1';
 signal Component_done : STD_LOGIC := '0';
@@ -254,13 +254,6 @@ Port (
   statevariable_none_na_m_q_in : in sfixed (18 downto -13);
   derivedvariable_none_na_m_fcond_out : out sfixed (18 downto -13);
   derivedvariable_none_na_m_fcond_in : in sfixed (18 downto -13);
-  param_per_time_na_m_reverseRatem1_rate : in sfixed (18 downto -2);
-  param_voltage_na_m_reverseRatem1_midpoint : in sfixed (2 downto -22);
-  param_voltage_na_m_reverseRatem1_scale : in sfixed (2 downto -22);
-  param_voltage_inv_na_m_reverseRatem1_scale_inv : in sfixed (22 downto -2);
-  exposure_per_time_na_m_reverseRatem1_r : out sfixed (18 downto -2);
-  derivedvariable_per_time_na_m_reverseRatem1_r_out : out sfixed (18 downto -2);
-  derivedvariable_per_time_na_m_reverseRatem1_r_in : in sfixed (18 downto -2);
   param_per_time_na_m_forwardRatem1_rate : in sfixed (18 downto -2);
   param_voltage_na_m_forwardRatem1_midpoint : in sfixed (2 downto -22);
   param_voltage_na_m_forwardRatem1_scale : in sfixed (2 downto -22);
@@ -268,6 +261,13 @@ Port (
   exposure_per_time_na_m_forwardRatem1_r : out sfixed (18 downto -2);
   derivedvariable_per_time_na_m_forwardRatem1_r_out : out sfixed (18 downto -2);
   derivedvariable_per_time_na_m_forwardRatem1_r_in : in sfixed (18 downto -2);
+  param_per_time_na_m_reverseRatem1_rate : in sfixed (18 downto -2);
+  param_voltage_na_m_reverseRatem1_midpoint : in sfixed (2 downto -22);
+  param_voltage_na_m_reverseRatem1_scale : in sfixed (2 downto -22);
+  param_voltage_inv_na_m_reverseRatem1_scale_inv : in sfixed (22 downto -2);
+  exposure_per_time_na_m_reverseRatem1_r : out sfixed (18 downto -2);
+  derivedvariable_per_time_na_m_reverseRatem1_r_out : out sfixed (18 downto -2);
+  derivedvariable_per_time_na_m_reverseRatem1_r_in : in sfixed (18 downto -2);
   param_none_na_h_instances : in sfixed (18 downto -13);
   exposure_none_na_h_fcond : out sfixed (18 downto -13);
   exposure_none_na_h_q : out sfixed (18 downto -13);
@@ -275,13 +275,6 @@ Port (
   statevariable_none_na_h_q_in : in sfixed (18 downto -13);
   derivedvariable_none_na_h_fcond_out : out sfixed (18 downto -13);
   derivedvariable_none_na_h_fcond_in : in sfixed (18 downto -13);
-  param_per_time_na_h_reverseRateh1_rate : in sfixed (18 downto -2);
-  param_voltage_na_h_reverseRateh1_midpoint : in sfixed (2 downto -22);
-  param_voltage_na_h_reverseRateh1_scale : in sfixed (2 downto -22);
-  param_voltage_inv_na_h_reverseRateh1_scale_inv : in sfixed (22 downto -2);
-  exposure_per_time_na_h_reverseRateh1_r : out sfixed (18 downto -2);
-  derivedvariable_per_time_na_h_reverseRateh1_r_out : out sfixed (18 downto -2);
-  derivedvariable_per_time_na_h_reverseRateh1_r_in : in sfixed (18 downto -2);
   param_per_time_na_h_forwardRateh1_rate : in sfixed (18 downto -2);
   param_voltage_na_h_forwardRateh1_midpoint : in sfixed (2 downto -22);
   param_voltage_na_h_forwardRateh1_scale : in sfixed (2 downto -22);
@@ -289,6 +282,13 @@ Port (
   exposure_per_time_na_h_forwardRateh1_r : out sfixed (18 downto -2);
   derivedvariable_per_time_na_h_forwardRateh1_r_out : out sfixed (18 downto -2);
   derivedvariable_per_time_na_h_forwardRateh1_r_in : in sfixed (18 downto -2);
+  param_per_time_na_h_reverseRateh1_rate : in sfixed (18 downto -2);
+  param_voltage_na_h_reverseRateh1_midpoint : in sfixed (2 downto -22);
+  param_voltage_na_h_reverseRateh1_scale : in sfixed (2 downto -22);
+  param_voltage_inv_na_h_reverseRateh1_scale_inv : in sfixed (22 downto -2);
+  exposure_per_time_na_h_reverseRateh1_r : out sfixed (18 downto -2);
+  derivedvariable_per_time_na_h_reverseRateh1_r_out : out sfixed (18 downto -2);
+  derivedvariable_per_time_na_h_reverseRateh1_r_in : in sfixed (18 downto -2);
   sysparam_time_timestep : in sfixed (-6 downto -22);
   sysparam_time_simtime : in sfixed (6 downto -22)
 );
@@ -297,12 +297,12 @@ signal naChans_Component_done : STD_LOGIC ; signal Exposure_current_naChans_i_in
 signal Exposure_conductance_naChans_na_g_internal : sfixed (-22 downto -53);
 signal Exposure_none_naChans_na_m_fcond_internal : sfixed (18 downto -13);
 signal Exposure_none_naChans_na_m_q_internal : sfixed (18 downto -13);
-signal Exposure_per_time_naChans_na_m_reverseRatem1_r_internal : sfixed (18 downto -2);
 signal Exposure_per_time_naChans_na_m_forwardRatem1_r_internal : sfixed (18 downto -2);
+signal Exposure_per_time_naChans_na_m_reverseRatem1_r_internal : sfixed (18 downto -2);
 signal Exposure_none_naChans_na_h_fcond_internal : sfixed (18 downto -13);
 signal Exposure_none_naChans_na_h_q_internal : sfixed (18 downto -13);
-signal Exposure_per_time_naChans_na_h_reverseRateh1_r_internal : sfixed (18 downto -2);
 signal Exposure_per_time_naChans_na_h_forwardRateh1_r_internal : sfixed (18 downto -2);
+signal Exposure_per_time_naChans_na_h_reverseRateh1_r_internal : sfixed (18 downto -2);
 ---------------------------------------------------------------------
 component kChans 
 Port (
@@ -327,13 +327,6 @@ Port (
   statevariable_none_k_n_q_in : in sfixed (18 downto -13);
   derivedvariable_none_k_n_fcond_out : out sfixed (18 downto -13);
   derivedvariable_none_k_n_fcond_in : in sfixed (18 downto -13);
-  param_per_time_k_n_reverseRaten1_rate : in sfixed (18 downto -2);
-  param_voltage_k_n_reverseRaten1_midpoint : in sfixed (2 downto -22);
-  param_voltage_k_n_reverseRaten1_scale : in sfixed (2 downto -22);
-  param_voltage_inv_k_n_reverseRaten1_scale_inv : in sfixed (22 downto -2);
-  exposure_per_time_k_n_reverseRaten1_r : out sfixed (18 downto -2);
-  derivedvariable_per_time_k_n_reverseRaten1_r_out : out sfixed (18 downto -2);
-  derivedvariable_per_time_k_n_reverseRaten1_r_in : in sfixed (18 downto -2);
   param_per_time_k_n_forwardRaten1_rate : in sfixed (18 downto -2);
   param_voltage_k_n_forwardRaten1_midpoint : in sfixed (2 downto -22);
   param_voltage_k_n_forwardRaten1_scale : in sfixed (2 downto -22);
@@ -341,6 +334,13 @@ Port (
   exposure_per_time_k_n_forwardRaten1_r : out sfixed (18 downto -2);
   derivedvariable_per_time_k_n_forwardRaten1_r_out : out sfixed (18 downto -2);
   derivedvariable_per_time_k_n_forwardRaten1_r_in : in sfixed (18 downto -2);
+  param_per_time_k_n_reverseRaten1_rate : in sfixed (18 downto -2);
+  param_voltage_k_n_reverseRaten1_midpoint : in sfixed (2 downto -22);
+  param_voltage_k_n_reverseRaten1_scale : in sfixed (2 downto -22);
+  param_voltage_inv_k_n_reverseRaten1_scale_inv : in sfixed (22 downto -2);
+  exposure_per_time_k_n_reverseRaten1_r : out sfixed (18 downto -2);
+  derivedvariable_per_time_k_n_reverseRaten1_r_out : out sfixed (18 downto -2);
+  derivedvariable_per_time_k_n_reverseRaten1_r_in : in sfixed (18 downto -2);
   sysparam_time_timestep : in sfixed (-6 downto -22);
   sysparam_time_simtime : in sfixed (6 downto -22)
 );
@@ -349,8 +349,8 @@ signal kChans_Component_done : STD_LOGIC ; signal Exposure_current_kChans_i_inte
 signal Exposure_conductance_kChans_k_g_internal : sfixed (-22 downto -53);
 signal Exposure_none_kChans_k_n_fcond_internal : sfixed (18 downto -13);
 signal Exposure_none_kChans_k_n_q_internal : sfixed (18 downto -13);
-signal Exposure_per_time_kChans_k_n_reverseRaten1_r_internal : sfixed (18 downto -2);
 signal Exposure_per_time_kChans_k_n_forwardRaten1_r_internal : sfixed (18 downto -2);
+signal Exposure_per_time_kChans_k_n_reverseRaten1_r_internal : sfixed (18 downto -2);
 ---------------------------------------------------------------------
 component synapsemodel 
 Port (
@@ -428,13 +428,6 @@ port map (
   statevariable_none_na_m_q_in => statevariable_none_naChans_na_m_q_in,
   derivedvariable_none_na_m_fcond_out => derivedvariable_none_naChans_na_m_fcond_out,
   derivedvariable_none_na_m_fcond_in => derivedvariable_none_naChans_na_m_fcond_in,
-  param_per_time_na_m_reverseRatem1_rate => param_per_time_naChans_na_m_reverseRatem1_rate,
-  param_voltage_na_m_reverseRatem1_midpoint => param_voltage_naChans_na_m_reverseRatem1_midpoint,
-  param_voltage_na_m_reverseRatem1_scale => param_voltage_naChans_na_m_reverseRatem1_scale,
-  param_voltage_inv_na_m_reverseRatem1_scale_inv => param_voltage_inv_naChans_na_m_reverseRatem1_scale_inv,
-  Exposure_per_time_na_m_reverseRatem1_r => Exposure_per_time_naChans_na_m_reverseRatem1_r_internal,
-  derivedvariable_per_time_na_m_reverseRatem1_r_out => derivedvariable_per_time_naChans_na_m_reverseRatem1_r_out,
-  derivedvariable_per_time_na_m_reverseRatem1_r_in => derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in,
   param_per_time_na_m_forwardRatem1_rate => param_per_time_naChans_na_m_forwardRatem1_rate,
   param_voltage_na_m_forwardRatem1_midpoint => param_voltage_naChans_na_m_forwardRatem1_midpoint,
   param_voltage_na_m_forwardRatem1_scale => param_voltage_naChans_na_m_forwardRatem1_scale,
@@ -442,6 +435,13 @@ port map (
   Exposure_per_time_na_m_forwardRatem1_r => Exposure_per_time_naChans_na_m_forwardRatem1_r_internal,
   derivedvariable_per_time_na_m_forwardRatem1_r_out => derivedvariable_per_time_naChans_na_m_forwardRatem1_r_out,
   derivedvariable_per_time_na_m_forwardRatem1_r_in => derivedvariable_per_time_naChans_na_m_forwardRatem1_r_in,
+  param_per_time_na_m_reverseRatem1_rate => param_per_time_naChans_na_m_reverseRatem1_rate,
+  param_voltage_na_m_reverseRatem1_midpoint => param_voltage_naChans_na_m_reverseRatem1_midpoint,
+  param_voltage_na_m_reverseRatem1_scale => param_voltage_naChans_na_m_reverseRatem1_scale,
+  param_voltage_inv_na_m_reverseRatem1_scale_inv => param_voltage_inv_naChans_na_m_reverseRatem1_scale_inv,
+  Exposure_per_time_na_m_reverseRatem1_r => Exposure_per_time_naChans_na_m_reverseRatem1_r_internal,
+  derivedvariable_per_time_na_m_reverseRatem1_r_out => derivedvariable_per_time_naChans_na_m_reverseRatem1_r_out,
+  derivedvariable_per_time_na_m_reverseRatem1_r_in => derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in,
   param_none_na_h_instances => param_none_naChans_na_h_instances,
   Exposure_none_na_h_fcond => Exposure_none_naChans_na_h_fcond_internal,
   Exposure_none_na_h_q => Exposure_none_naChans_na_h_q_internal,
@@ -449,13 +449,6 @@ port map (
   statevariable_none_na_h_q_in => statevariable_none_naChans_na_h_q_in,
   derivedvariable_none_na_h_fcond_out => derivedvariable_none_naChans_na_h_fcond_out,
   derivedvariable_none_na_h_fcond_in => derivedvariable_none_naChans_na_h_fcond_in,
-  param_per_time_na_h_reverseRateh1_rate => param_per_time_naChans_na_h_reverseRateh1_rate,
-  param_voltage_na_h_reverseRateh1_midpoint => param_voltage_naChans_na_h_reverseRateh1_midpoint,
-  param_voltage_na_h_reverseRateh1_scale => param_voltage_naChans_na_h_reverseRateh1_scale,
-  param_voltage_inv_na_h_reverseRateh1_scale_inv => param_voltage_inv_naChans_na_h_reverseRateh1_scale_inv,
-  Exposure_per_time_na_h_reverseRateh1_r => Exposure_per_time_naChans_na_h_reverseRateh1_r_internal,
-  derivedvariable_per_time_na_h_reverseRateh1_r_out => derivedvariable_per_time_naChans_na_h_reverseRateh1_r_out,
-  derivedvariable_per_time_na_h_reverseRateh1_r_in => derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in,
   param_per_time_na_h_forwardRateh1_rate => param_per_time_naChans_na_h_forwardRateh1_rate,
   param_voltage_na_h_forwardRateh1_midpoint => param_voltage_naChans_na_h_forwardRateh1_midpoint,
   param_voltage_na_h_forwardRateh1_scale => param_voltage_naChans_na_h_forwardRateh1_scale,
@@ -463,6 +456,13 @@ port map (
   Exposure_per_time_na_h_forwardRateh1_r => Exposure_per_time_naChans_na_h_forwardRateh1_r_internal,
   derivedvariable_per_time_na_h_forwardRateh1_r_out => derivedvariable_per_time_naChans_na_h_forwardRateh1_r_out,
   derivedvariable_per_time_na_h_forwardRateh1_r_in => derivedvariable_per_time_naChans_na_h_forwardRateh1_r_in,
+  param_per_time_na_h_reverseRateh1_rate => param_per_time_naChans_na_h_reverseRateh1_rate,
+  param_voltage_na_h_reverseRateh1_midpoint => param_voltage_naChans_na_h_reverseRateh1_midpoint,
+  param_voltage_na_h_reverseRateh1_scale => param_voltage_naChans_na_h_reverseRateh1_scale,
+  param_voltage_inv_na_h_reverseRateh1_scale_inv => param_voltage_inv_naChans_na_h_reverseRateh1_scale_inv,
+  Exposure_per_time_na_h_reverseRateh1_r => Exposure_per_time_naChans_na_h_reverseRateh1_r_internal,
+  derivedvariable_per_time_na_h_reverseRateh1_r_out => derivedvariable_per_time_naChans_na_h_reverseRateh1_r_out,
+  derivedvariable_per_time_na_h_reverseRateh1_r_in => derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in,
   sysparam_time_timestep => sysparam_time_timestep,
   sysparam_time_simtime => sysparam_time_simtime
 );
@@ -490,13 +490,6 @@ port map (
   statevariable_none_k_n_q_in => statevariable_none_kChans_k_n_q_in,
   derivedvariable_none_k_n_fcond_out => derivedvariable_none_kChans_k_n_fcond_out,
   derivedvariable_none_k_n_fcond_in => derivedvariable_none_kChans_k_n_fcond_in,
-  param_per_time_k_n_reverseRaten1_rate => param_per_time_kChans_k_n_reverseRaten1_rate,
-  param_voltage_k_n_reverseRaten1_midpoint => param_voltage_kChans_k_n_reverseRaten1_midpoint,
-  param_voltage_k_n_reverseRaten1_scale => param_voltage_kChans_k_n_reverseRaten1_scale,
-  param_voltage_inv_k_n_reverseRaten1_scale_inv => param_voltage_inv_kChans_k_n_reverseRaten1_scale_inv,
-  Exposure_per_time_k_n_reverseRaten1_r => Exposure_per_time_kChans_k_n_reverseRaten1_r_internal,
-  derivedvariable_per_time_k_n_reverseRaten1_r_out => derivedvariable_per_time_kChans_k_n_reverseRaten1_r_out,
-  derivedvariable_per_time_k_n_reverseRaten1_r_in => derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in,
   param_per_time_k_n_forwardRaten1_rate => param_per_time_kChans_k_n_forwardRaten1_rate,
   param_voltage_k_n_forwardRaten1_midpoint => param_voltage_kChans_k_n_forwardRaten1_midpoint,
   param_voltage_k_n_forwardRaten1_scale => param_voltage_kChans_k_n_forwardRaten1_scale,
@@ -504,6 +497,13 @@ port map (
   Exposure_per_time_k_n_forwardRaten1_r => Exposure_per_time_kChans_k_n_forwardRaten1_r_internal,
   derivedvariable_per_time_k_n_forwardRaten1_r_out => derivedvariable_per_time_kChans_k_n_forwardRaten1_r_out,
   derivedvariable_per_time_k_n_forwardRaten1_r_in => derivedvariable_per_time_kChans_k_n_forwardRaten1_r_in,
+  param_per_time_k_n_reverseRaten1_rate => param_per_time_kChans_k_n_reverseRaten1_rate,
+  param_voltage_k_n_reverseRaten1_midpoint => param_voltage_kChans_k_n_reverseRaten1_midpoint,
+  param_voltage_k_n_reverseRaten1_scale => param_voltage_kChans_k_n_reverseRaten1_scale,
+  param_voltage_inv_k_n_reverseRaten1_scale_inv => param_voltage_inv_kChans_k_n_reverseRaten1_scale_inv,
+  Exposure_per_time_k_n_reverseRaten1_r => Exposure_per_time_kChans_k_n_reverseRaten1_r_internal,
+  derivedvariable_per_time_k_n_reverseRaten1_r_out => derivedvariable_per_time_kChans_k_n_reverseRaten1_r_out,
+  derivedvariable_per_time_k_n_reverseRaten1_r_in => derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in,
   sysparam_time_timestep => sysparam_time_timestep,
   sysparam_time_simtime => sysparam_time_simtime
 );

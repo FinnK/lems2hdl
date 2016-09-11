@@ -28,7 +28,6 @@ Port (
   step_once_go : in STD_LOGIC; --signals to the neuron from the core that a time step is to be simulated
   step_once_complete : out STD_LOGIC; --signals to the core that a time step has finished
   eventport_in_spike_aggregate : in STD_LOGIC_VECTOR(511 downto 0);
-  SelectSpikesIn			: Std_logic_vector(4607 downto 0) := (others => '0');
   current_regime_in_stdlv : in STD_LOGIC_VECTOR(1 downto 0);
   current_regime_out_stdlv : out STD_LOGIC_VECTOR(1 downto 0);
   eventport_out_spike : out STD_LOGIC;
@@ -80,7 +79,8 @@ signal subprocess_dyn_ready : STD_LOGIC := '0';
 signal subprocess_model_ready : STD_LOGIC := '1';
 signal subprocess_all_ready_shotdone : STD_LOGIC := '1';
 signal subprocess_all_ready_shot : STD_LOGIC := '0';
-signal subprocess_all_ready : STD_LOGIC := '0';
+signal subprocess_all_ready : STD_LOGIC := '0';signal SynapseModel_step_once_complete_fired : STD_LOGIC := '1';
+
 
 signal step_once_complete_fired : STD_LOGIC := '1';
 signal Component_done : STD_LOGIC := '0';

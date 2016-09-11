@@ -39,13 +39,6 @@ Port (
   statevariable_none_n_q_in : in sfixed (18 downto -13);
   derivedvariable_none_n_fcond_out : out sfixed (18 downto -13);
   derivedvariable_none_n_fcond_in : in sfixed (18 downto -13);
-  param_per_time_n_reverseRaten1_rate : in sfixed (18 downto -2);
-  param_voltage_n_reverseRaten1_midpoint : in sfixed (2 downto -22);
-  param_voltage_n_reverseRaten1_scale : in sfixed (2 downto -22);
-  param_voltage_inv_n_reverseRaten1_scale_inv : in sfixed (22 downto -2);
-  exposure_per_time_n_reverseRaten1_r : out sfixed (18 downto -2);
-  derivedvariable_per_time_n_reverseRaten1_r_out : out sfixed (18 downto -2);
-  derivedvariable_per_time_n_reverseRaten1_r_in : in sfixed (18 downto -2);
   param_per_time_n_forwardRaten1_rate : in sfixed (18 downto -2);
   param_voltage_n_forwardRaten1_midpoint : in sfixed (2 downto -22);
   param_voltage_n_forwardRaten1_scale : in sfixed (2 downto -22);
@@ -53,6 +46,13 @@ Port (
   exposure_per_time_n_forwardRaten1_r : out sfixed (18 downto -2);
   derivedvariable_per_time_n_forwardRaten1_r_out : out sfixed (18 downto -2);
   derivedvariable_per_time_n_forwardRaten1_r_in : in sfixed (18 downto -2);
+  param_per_time_n_reverseRaten1_rate : in sfixed (18 downto -2);
+  param_voltage_n_reverseRaten1_midpoint : in sfixed (2 downto -22);
+  param_voltage_n_reverseRaten1_scale : in sfixed (2 downto -22);
+  param_voltage_inv_n_reverseRaten1_scale_inv : in sfixed (22 downto -2);
+  exposure_per_time_n_reverseRaten1_r : out sfixed (18 downto -2);
+  derivedvariable_per_time_n_reverseRaten1_r_out : out sfixed (18 downto -2);
+  derivedvariable_per_time_n_reverseRaten1_r_in : in sfixed (18 downto -2);
   sysparam_time_timestep : in sfixed (-6 downto -22);
   sysparam_time_simtime : in sfixed (6 downto -22)
 );
@@ -130,13 +130,6 @@ Port (
   statevariable_none_q_in : in sfixed (18 downto -13);
   derivedvariable_none_fcond_out : out sfixed (18 downto -13);
   derivedvariable_none_fcond_in : in sfixed (18 downto -13);
-  param_per_time_reverseRaten1_rate : in sfixed (18 downto -2);
-  param_voltage_reverseRaten1_midpoint : in sfixed (2 downto -22);
-  param_voltage_reverseRaten1_scale : in sfixed (2 downto -22);
-  param_voltage_inv_reverseRaten1_scale_inv : in sfixed (22 downto -2);
-  exposure_per_time_reverseRaten1_r : out sfixed (18 downto -2);
-  derivedvariable_per_time_reverseRaten1_r_out : out sfixed (18 downto -2);
-  derivedvariable_per_time_reverseRaten1_r_in : in sfixed (18 downto -2);
   param_per_time_forwardRaten1_rate : in sfixed (18 downto -2);
   param_voltage_forwardRaten1_midpoint : in sfixed (2 downto -22);
   param_voltage_forwardRaten1_scale : in sfixed (2 downto -22);
@@ -144,14 +137,21 @@ Port (
   exposure_per_time_forwardRaten1_r : out sfixed (18 downto -2);
   derivedvariable_per_time_forwardRaten1_r_out : out sfixed (18 downto -2);
   derivedvariable_per_time_forwardRaten1_r_in : in sfixed (18 downto -2);
+  param_per_time_reverseRaten1_rate : in sfixed (18 downto -2);
+  param_voltage_reverseRaten1_midpoint : in sfixed (2 downto -22);
+  param_voltage_reverseRaten1_scale : in sfixed (2 downto -22);
+  param_voltage_inv_reverseRaten1_scale_inv : in sfixed (22 downto -2);
+  exposure_per_time_reverseRaten1_r : out sfixed (18 downto -2);
+  derivedvariable_per_time_reverseRaten1_r_out : out sfixed (18 downto -2);
+  derivedvariable_per_time_reverseRaten1_r_in : in sfixed (18 downto -2);
   sysparam_time_timestep : in sfixed (-6 downto -22);
   sysparam_time_simtime : in sfixed (6 downto -22)
 );
 end component;
 signal n_Component_done : STD_LOGIC ; signal Exposure_none_n_fcond_internal : sfixed (18 downto -13);
 signal Exposure_none_n_q_internal : sfixed (18 downto -13);
-signal Exposure_per_time_n_reverseRaten1_r_internal : sfixed (18 downto -2);
 signal Exposure_per_time_n_forwardRaten1_r_internal : sfixed (18 downto -2);
+signal Exposure_per_time_n_reverseRaten1_r_internal : sfixed (18 downto -2);
 ---------------------------------------------------------------------
 ---------------------------------------------------------------------
 -- Begin Internal Processes
@@ -175,13 +175,6 @@ port map (
   statevariable_none_q_in => statevariable_none_n_q_in,
   derivedvariable_none_fcond_out => derivedvariable_none_n_fcond_out,
   derivedvariable_none_fcond_in => derivedvariable_none_n_fcond_in,
-  param_per_time_reverseRaten1_rate => param_per_time_n_reverseRaten1_rate,
-  param_voltage_reverseRaten1_midpoint => param_voltage_n_reverseRaten1_midpoint,
-  param_voltage_reverseRaten1_scale => param_voltage_n_reverseRaten1_scale,
-  param_voltage_inv_reverseRaten1_scale_inv => param_voltage_inv_n_reverseRaten1_scale_inv,
-  Exposure_per_time_reverseRaten1_r => Exposure_per_time_n_reverseRaten1_r_internal,
-  derivedvariable_per_time_reverseRaten1_r_out => derivedvariable_per_time_n_reverseRaten1_r_out,
-  derivedvariable_per_time_reverseRaten1_r_in => derivedvariable_per_time_n_reverseRaten1_r_in,
   param_per_time_forwardRaten1_rate => param_per_time_n_forwardRaten1_rate,
   param_voltage_forwardRaten1_midpoint => param_voltage_n_forwardRaten1_midpoint,
   param_voltage_forwardRaten1_scale => param_voltage_n_forwardRaten1_scale,
@@ -189,6 +182,13 @@ port map (
   Exposure_per_time_forwardRaten1_r => Exposure_per_time_n_forwardRaten1_r_internal,
   derivedvariable_per_time_forwardRaten1_r_out => derivedvariable_per_time_n_forwardRaten1_r_out,
   derivedvariable_per_time_forwardRaten1_r_in => derivedvariable_per_time_n_forwardRaten1_r_in,
+  param_per_time_reverseRaten1_rate => param_per_time_n_reverseRaten1_rate,
+  param_voltage_reverseRaten1_midpoint => param_voltage_n_reverseRaten1_midpoint,
+  param_voltage_reverseRaten1_scale => param_voltage_n_reverseRaten1_scale,
+  param_voltage_inv_reverseRaten1_scale_inv => param_voltage_inv_n_reverseRaten1_scale_inv,
+  Exposure_per_time_reverseRaten1_r => Exposure_per_time_n_reverseRaten1_r_internal,
+  derivedvariable_per_time_reverseRaten1_r_out => derivedvariable_per_time_n_reverseRaten1_r_out,
+  derivedvariable_per_time_reverseRaten1_r_in => derivedvariable_per_time_n_reverseRaten1_r_in,
   sysparam_time_timestep => sysparam_time_timestep,
   sysparam_time_simtime => sysparam_time_simtime
 );

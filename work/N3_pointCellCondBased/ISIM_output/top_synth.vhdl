@@ -61,13 +61,6 @@ entity top_synth is
   neuron_model_stateRESTORE_none_naChans_na_m_q : in sfixed (18 downto -13);
   neuron_model_stateCURRENT_none_naChans_na_m_fcond : out sfixed (18 downto -13);
   neuron_model_stateRESTORE_none_naChans_na_m_fcond : in sfixed (18 downto -13);
-  neuron_model_param_per_time_naChans_na_m_reverseRatem1_rate : in sfixed (18 downto -2);
-  neuron_model_param_voltage_naChans_na_m_reverseRatem1_midpoint : in sfixed (2 downto -22);
-  neuron_model_param_voltage_naChans_na_m_reverseRatem1_scale : in sfixed (2 downto -22);
-  neuron_model_param_voltage_inv_naChans_na_m_reverseRatem1_scale_inv : in sfixed (22 downto -2);
-  neuron_model_exposure_per_time_naChans_na_m_reverseRatem1_r : out sfixed (18 downto -2);
-  neuron_model_stateCURRENT_per_time_naChans_na_m_reverseRatem1_r : out sfixed (18 downto -2);
-  neuron_model_stateRESTORE_per_time_naChans_na_m_reverseRatem1_r : in sfixed (18 downto -2);
   neuron_model_param_per_time_naChans_na_m_forwardRatem1_rate : in sfixed (18 downto -2);
   neuron_model_param_voltage_naChans_na_m_forwardRatem1_midpoint : in sfixed (2 downto -22);
   neuron_model_param_voltage_naChans_na_m_forwardRatem1_scale : in sfixed (2 downto -22);
@@ -75,6 +68,13 @@ entity top_synth is
   neuron_model_exposure_per_time_naChans_na_m_forwardRatem1_r : out sfixed (18 downto -2);
   neuron_model_stateCURRENT_per_time_naChans_na_m_forwardRatem1_r : out sfixed (18 downto -2);
 	 neuron_model_stateRESTORE_per_time_naChans_na_m_forwardRatem1_r : in sfixed (18 downto -2);
+  neuron_model_param_per_time_naChans_na_m_reverseRatem1_rate : in sfixed (18 downto -2);
+  neuron_model_param_voltage_naChans_na_m_reverseRatem1_midpoint : in sfixed (2 downto -22);
+  neuron_model_param_voltage_naChans_na_m_reverseRatem1_scale : in sfixed (2 downto -22);
+  neuron_model_param_voltage_inv_naChans_na_m_reverseRatem1_scale_inv : in sfixed (22 downto -2);
+  neuron_model_exposure_per_time_naChans_na_m_reverseRatem1_r : out sfixed (18 downto -2);
+  neuron_model_stateCURRENT_per_time_naChans_na_m_reverseRatem1_r : out sfixed (18 downto -2);
+  neuron_model_stateRESTORE_per_time_naChans_na_m_reverseRatem1_r : in sfixed (18 downto -2);
   neuron_model_param_none_naChans_na_h_instances : in sfixed (18 downto -13);
   neuron_model_exposure_none_naChans_na_h_fcond : out sfixed (18 downto -13);
   neuron_model_exposure_none_naChans_na_h_q : out sfixed (18 downto -13);
@@ -82,13 +82,6 @@ entity top_synth is
   neuron_model_stateRESTORE_none_naChans_na_h_q : in sfixed (18 downto -13);
   neuron_model_stateCURRENT_none_naChans_na_h_fcond : out sfixed (18 downto -13);
   neuron_model_stateRESTORE_none_naChans_na_h_fcond : in sfixed (18 downto -13);
-  neuron_model_param_per_time_naChans_na_h_reverseRateh1_rate : in sfixed (18 downto -2);
-  neuron_model_param_voltage_naChans_na_h_reverseRateh1_midpoint : in sfixed (2 downto -22);
-  neuron_model_param_voltage_naChans_na_h_reverseRateh1_scale : in sfixed (2 downto -22);
-  neuron_model_param_voltage_inv_naChans_na_h_reverseRateh1_scale_inv : in sfixed (22 downto -2);
-  neuron_model_exposure_per_time_naChans_na_h_reverseRateh1_r : out sfixed (18 downto -2);
-  neuron_model_stateCURRENT_per_time_naChans_na_h_reverseRateh1_r : out sfixed (18 downto -2);
-  neuron_model_stateRESTORE_per_time_naChans_na_h_reverseRateh1_r : in sfixed (18 downto -2);
   neuron_model_param_per_time_naChans_na_h_forwardRateh1_rate : in sfixed (18 downto -2);
   neuron_model_param_voltage_naChans_na_h_forwardRateh1_midpoint : in sfixed (2 downto -22);
   neuron_model_param_voltage_naChans_na_h_forwardRateh1_scale : in sfixed (2 downto -22);
@@ -96,6 +89,13 @@ entity top_synth is
   neuron_model_exposure_per_time_naChans_na_h_forwardRateh1_r : out sfixed (18 downto -2);
   neuron_model_stateCURRENT_per_time_naChans_na_h_forwardRateh1_r : out sfixed (18 downto -2);
   neuron_model_stateRESTORE_per_time_naChans_na_h_forwardRateh1_r : in sfixed (18 downto -2);
+  neuron_model_param_per_time_naChans_na_h_reverseRateh1_rate : in sfixed (18 downto -2);
+  neuron_model_param_voltage_naChans_na_h_reverseRateh1_midpoint : in sfixed (2 downto -22);
+  neuron_model_param_voltage_naChans_na_h_reverseRateh1_scale : in sfixed (2 downto -22);
+  neuron_model_param_voltage_inv_naChans_na_h_reverseRateh1_scale_inv : in sfixed (22 downto -2);
+  neuron_model_exposure_per_time_naChans_na_h_reverseRateh1_r : out sfixed (18 downto -2);
+  neuron_model_stateCURRENT_per_time_naChans_na_h_reverseRateh1_r : out sfixed (18 downto -2);
+  neuron_model_stateRESTORE_per_time_naChans_na_h_reverseRateh1_r : in sfixed (18 downto -2);
   neuron_model_param_none_kChans_number : in sfixed (18 downto -13);
   neuron_model_param_voltage_kChans_erev : in sfixed (2 downto -22);
   neuron_model_exposure_current_kChans_i : out sfixed (-28 downto -53);
@@ -112,13 +112,6 @@ entity top_synth is
   neuron_model_stateRESTORE_none_kChans_k_n_q : in sfixed (18 downto -13);
   neuron_model_stateCURRENT_none_kChans_k_n_fcond : out sfixed (18 downto -13);
   neuron_model_stateRESTORE_none_kChans_k_n_fcond : in sfixed (18 downto -13);
-  neuron_model_param_per_time_kChans_k_n_reverseRaten1_rate : in sfixed (18 downto -2);
-  neuron_model_param_voltage_kChans_k_n_reverseRaten1_midpoint : in sfixed (2 downto -22);
-  neuron_model_param_voltage_kChans_k_n_reverseRaten1_scale : in sfixed (2 downto -22);
-  neuron_model_param_voltage_inv_kChans_k_n_reverseRaten1_scale_inv : in sfixed (22 downto -2);
-  neuron_model_exposure_per_time_kChans_k_n_reverseRaten1_r : out sfixed (18 downto -2);
-  neuron_model_stateCURRENT_per_time_kChans_k_n_reverseRaten1_r : out sfixed (18 downto -2);
-  neuron_model_stateRESTORE_per_time_kChans_k_n_reverseRaten1_r : in sfixed (18 downto -2);
   neuron_model_param_per_time_kChans_k_n_forwardRaten1_rate : in sfixed (18 downto -2);
   neuron_model_param_voltage_kChans_k_n_forwardRaten1_midpoint : in sfixed (2 downto -22);
   neuron_model_param_voltage_kChans_k_n_forwardRaten1_scale : in sfixed (2 downto -22);
@@ -126,6 +119,13 @@ entity top_synth is
   neuron_model_exposure_per_time_kChans_k_n_forwardRaten1_r : out sfixed (18 downto -2);
   neuron_model_stateCURRENT_per_time_kChans_k_n_forwardRaten1_r : out sfixed (18 downto -2);
 	 neuron_model_stateRESTORE_per_time_kChans_k_n_forwardRaten1_r : in sfixed (18 downto -2);
+  neuron_model_param_per_time_kChans_k_n_reverseRaten1_rate : in sfixed (18 downto -2);
+  neuron_model_param_voltage_kChans_k_n_reverseRaten1_midpoint : in sfixed (2 downto -22);
+  neuron_model_param_voltage_kChans_k_n_reverseRaten1_scale : in sfixed (2 downto -22);
+  neuron_model_param_voltage_inv_kChans_k_n_reverseRaten1_scale_inv : in sfixed (22 downto -2);
+  neuron_model_exposure_per_time_kChans_k_n_reverseRaten1_r : out sfixed (18 downto -2);
+  neuron_model_stateCURRENT_per_time_kChans_k_n_reverseRaten1_r : out sfixed (18 downto -2);
+  neuron_model_stateRESTORE_per_time_kChans_k_n_reverseRaten1_r : in sfixed (18 downto -2);
   neuron_model_param_time_synapsemodel_tauDecay : in sfixed (6 downto -18);
   neuron_model_param_conductance_synapsemodel_gbase : in sfixed (-22 downto -53);
   neuron_model_param_voltage_synapsemodel_erev : in sfixed (2 downto -22);
@@ -199,13 +199,6 @@ component neuron_model
   statevariable_none_naChans_na_m_q_in : in sfixed (18 downto -13);
   derivedvariable_none_naChans_na_m_fcond_out : out sfixed (18 downto -13);
   derivedvariable_none_naChans_na_m_fcond_in : in sfixed (18 downto -13);
-  param_per_time_naChans_na_m_reverseRatem1_rate : in sfixed (18 downto -2);
-  param_voltage_naChans_na_m_reverseRatem1_midpoint : in sfixed (2 downto -22);
-  param_voltage_naChans_na_m_reverseRatem1_scale : in sfixed (2 downto -22);
-  param_voltage_inv_naChans_na_m_reverseRatem1_scale_inv : in sfixed (22 downto -2);
-  exposure_per_time_naChans_na_m_reverseRatem1_r : out sfixed (18 downto -2);
-  derivedvariable_per_time_naChans_na_m_reverseRatem1_r_out : out sfixed (18 downto -2);
-  derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in : in sfixed (18 downto -2);
   param_per_time_naChans_na_m_forwardRatem1_rate : in sfixed (18 downto -2);
   param_voltage_naChans_na_m_forwardRatem1_midpoint : in sfixed (2 downto -22);
   param_voltage_naChans_na_m_forwardRatem1_scale : in sfixed (2 downto -22);
@@ -213,6 +206,13 @@ component neuron_model
   exposure_per_time_naChans_na_m_forwardRatem1_r : out sfixed (18 downto -2);
   derivedvariable_per_time_naChans_na_m_forwardRatem1_r_out : out sfixed (18 downto -2);
   derivedvariable_per_time_naChans_na_m_forwardRatem1_r_in : in sfixed (18 downto -2);
+  param_per_time_naChans_na_m_reverseRatem1_rate : in sfixed (18 downto -2);
+  param_voltage_naChans_na_m_reverseRatem1_midpoint : in sfixed (2 downto -22);
+  param_voltage_naChans_na_m_reverseRatem1_scale : in sfixed (2 downto -22);
+  param_voltage_inv_naChans_na_m_reverseRatem1_scale_inv : in sfixed (22 downto -2);
+  exposure_per_time_naChans_na_m_reverseRatem1_r : out sfixed (18 downto -2);
+  derivedvariable_per_time_naChans_na_m_reverseRatem1_r_out : out sfixed (18 downto -2);
+  derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in : in sfixed (18 downto -2);
   param_none_naChans_na_h_instances : in sfixed (18 downto -13);
   exposure_none_naChans_na_h_fcond : out sfixed (18 downto -13);
   exposure_none_naChans_na_h_q : out sfixed (18 downto -13);
@@ -220,13 +220,6 @@ component neuron_model
   statevariable_none_naChans_na_h_q_in : in sfixed (18 downto -13);
   derivedvariable_none_naChans_na_h_fcond_out : out sfixed (18 downto -13);
   derivedvariable_none_naChans_na_h_fcond_in : in sfixed (18 downto -13);
-  param_per_time_naChans_na_h_reverseRateh1_rate : in sfixed (18 downto -2);
-  param_voltage_naChans_na_h_reverseRateh1_midpoint : in sfixed (2 downto -22);
-  param_voltage_naChans_na_h_reverseRateh1_scale : in sfixed (2 downto -22);
-  param_voltage_inv_naChans_na_h_reverseRateh1_scale_inv : in sfixed (22 downto -2);
-  exposure_per_time_naChans_na_h_reverseRateh1_r : out sfixed (18 downto -2);
-  derivedvariable_per_time_naChans_na_h_reverseRateh1_r_out : out sfixed (18 downto -2);
-  derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in : in sfixed (18 downto -2);
   param_per_time_naChans_na_h_forwardRateh1_rate : in sfixed (18 downto -2);
   param_voltage_naChans_na_h_forwardRateh1_midpoint : in sfixed (2 downto -22);
   param_voltage_naChans_na_h_forwardRateh1_scale : in sfixed (2 downto -22);
@@ -234,6 +227,13 @@ component neuron_model
   exposure_per_time_naChans_na_h_forwardRateh1_r : out sfixed (18 downto -2);
   derivedvariable_per_time_naChans_na_h_forwardRateh1_r_out : out sfixed (18 downto -2);
   derivedvariable_per_time_naChans_na_h_forwardRateh1_r_in : in sfixed (18 downto -2);
+  param_per_time_naChans_na_h_reverseRateh1_rate : in sfixed (18 downto -2);
+  param_voltage_naChans_na_h_reverseRateh1_midpoint : in sfixed (2 downto -22);
+  param_voltage_naChans_na_h_reverseRateh1_scale : in sfixed (2 downto -22);
+  param_voltage_inv_naChans_na_h_reverseRateh1_scale_inv : in sfixed (22 downto -2);
+  exposure_per_time_naChans_na_h_reverseRateh1_r : out sfixed (18 downto -2);
+  derivedvariable_per_time_naChans_na_h_reverseRateh1_r_out : out sfixed (18 downto -2);
+  derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in : in sfixed (18 downto -2);
   param_none_kChans_number : in sfixed (18 downto -13);
   param_voltage_kChans_erev : in sfixed (2 downto -22);
   exposure_current_kChans_i : out sfixed (-28 downto -53);
@@ -250,13 +250,6 @@ component neuron_model
   statevariable_none_kChans_k_n_q_in : in sfixed (18 downto -13);
   derivedvariable_none_kChans_k_n_fcond_out : out sfixed (18 downto -13);
   derivedvariable_none_kChans_k_n_fcond_in : in sfixed (18 downto -13);
-  param_per_time_kChans_k_n_reverseRaten1_rate : in sfixed (18 downto -2);
-  param_voltage_kChans_k_n_reverseRaten1_midpoint : in sfixed (2 downto -22);
-  param_voltage_kChans_k_n_reverseRaten1_scale : in sfixed (2 downto -22);
-  param_voltage_inv_kChans_k_n_reverseRaten1_scale_inv : in sfixed (22 downto -2);
-  exposure_per_time_kChans_k_n_reverseRaten1_r : out sfixed (18 downto -2);
-  derivedvariable_per_time_kChans_k_n_reverseRaten1_r_out : out sfixed (18 downto -2);
-  derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in : in sfixed (18 downto -2);
   param_per_time_kChans_k_n_forwardRaten1_rate : in sfixed (18 downto -2);
   param_voltage_kChans_k_n_forwardRaten1_midpoint : in sfixed (2 downto -22);
   param_voltage_kChans_k_n_forwardRaten1_scale : in sfixed (2 downto -22);
@@ -264,6 +257,13 @@ component neuron_model
   exposure_per_time_kChans_k_n_forwardRaten1_r : out sfixed (18 downto -2);
   derivedvariable_per_time_kChans_k_n_forwardRaten1_r_out : out sfixed (18 downto -2);
   derivedvariable_per_time_kChans_k_n_forwardRaten1_r_in : in sfixed (18 downto -2);
+  param_per_time_kChans_k_n_reverseRaten1_rate : in sfixed (18 downto -2);
+  param_voltage_kChans_k_n_reverseRaten1_midpoint : in sfixed (2 downto -22);
+  param_voltage_kChans_k_n_reverseRaten1_scale : in sfixed (2 downto -22);
+  param_voltage_inv_kChans_k_n_reverseRaten1_scale_inv : in sfixed (22 downto -2);
+  exposure_per_time_kChans_k_n_reverseRaten1_r : out sfixed (18 downto -2);
+  derivedvariable_per_time_kChans_k_n_reverseRaten1_r_out : out sfixed (18 downto -2);
+  derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in : in sfixed (18 downto -2);
   param_time_synapsemodel_tauDecay : in sfixed (6 downto -18);
   param_conductance_synapsemodel_gbase : in sfixed (-22 downto -53);
   param_voltage_synapsemodel_erev : in sfixed (2 downto -22);
@@ -283,7 +283,7 @@ end component;
 
 
 	signal neuron_model_eventport_out_spike_out : STD_LOGIC := '0';
-	signal neuron_model_statevariable_voltage_v_out_int : sfixed (2 downto -22);signal neuron_model_statevariable_voltage_v_in_int : sfixed (2 downto -22);signal neuron_model_statevariable_none_spiking_out_int : sfixed (18 downto -13);signal neuron_model_statevariable_none_spiking_in_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_current_leak_i_out_int : sfixed (-28 downto -53);signal neuron_model_derivedvariable_current_leak_i_in_int : sfixed (-28 downto -53);signal neuron_model_derivedvariable_conductance_leak_passive_g_out_int : sfixed (-22 downto -53);signal neuron_model_derivedvariable_conductance_leak_passive_g_in_int : sfixed (-22 downto -53);signal neuron_model_derivedvariable_current_naChans_i_out_int : sfixed (-28 downto -53);signal neuron_model_derivedvariable_current_naChans_i_in_int : sfixed (-28 downto -53);signal neuron_model_derivedvariable_conductance_naChans_na_g_out_int : sfixed (-22 downto -53);signal neuron_model_derivedvariable_conductance_naChans_na_g_in_int : sfixed (-22 downto -53);signal neuron_model_statevariable_none_naChans_na_m_q_out_int : sfixed (18 downto -13);signal neuron_model_statevariable_none_naChans_na_m_q_in_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_none_naChans_na_m_fcond_out_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_none_naChans_na_m_fcond_in_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_per_time_naChans_na_m_reverseRatem1_r_out_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_naChans_na_m_forwardRatem1_r_out_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_naChans_na_m_forwardRatem1_r_in_int : sfixed (18 downto -2);signal neuron_model_statevariable_none_naChans_na_h_q_out_int : sfixed (18 downto -13);signal neuron_model_statevariable_none_naChans_na_h_q_in_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_none_naChans_na_h_fcond_out_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_none_naChans_na_h_fcond_in_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_per_time_naChans_na_h_reverseRateh1_r_out_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_naChans_na_h_forwardRateh1_r_out_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_naChans_na_h_forwardRateh1_r_in_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_current_kChans_i_out_int : sfixed (-28 downto -53);signal neuron_model_derivedvariable_current_kChans_i_in_int : sfixed (-28 downto -53);signal neuron_model_derivedvariable_conductance_kChans_k_g_out_int : sfixed (-22 downto -53);signal neuron_model_derivedvariable_conductance_kChans_k_g_in_int : sfixed (-22 downto -53);signal neuron_model_statevariable_none_kChans_k_n_q_out_int : sfixed (18 downto -13);signal neuron_model_statevariable_none_kChans_k_n_q_in_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_none_kChans_k_n_fcond_out_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_none_kChans_k_n_fcond_in_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_per_time_kChans_k_n_reverseRaten1_r_out_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_kChans_k_n_forwardRaten1_r_out_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_kChans_k_n_forwardRaten1_r_in_int : sfixed (18 downto -2);signal neuron_model_statevariable_conductance_synapsemodel_g_out_int : sfixed (-22 downto -53);signal neuron_model_statevariable_conductance_synapsemodel_g_in_int : sfixed (-22 downto -53);signal neuron_model_derivedvariable_current_synapsemodel_i_out_int : sfixed (-28 downto -53);signal neuron_model_derivedvariable_current_synapsemodel_i_in_int : sfixed (-28 downto -53);
+	signal neuron_model_statevariable_voltage_v_out_int : sfixed (2 downto -22);signal neuron_model_statevariable_voltage_v_in_int : sfixed (2 downto -22);signal neuron_model_statevariable_none_spiking_out_int : sfixed (18 downto -13);signal neuron_model_statevariable_none_spiking_in_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_current_leak_i_out_int : sfixed (-28 downto -53);signal neuron_model_derivedvariable_current_leak_i_in_int : sfixed (-28 downto -53);signal neuron_model_derivedvariable_conductance_leak_passive_g_out_int : sfixed (-22 downto -53);signal neuron_model_derivedvariable_conductance_leak_passive_g_in_int : sfixed (-22 downto -53);signal neuron_model_derivedvariable_current_naChans_i_out_int : sfixed (-28 downto -53);signal neuron_model_derivedvariable_current_naChans_i_in_int : sfixed (-28 downto -53);signal neuron_model_derivedvariable_conductance_naChans_na_g_out_int : sfixed (-22 downto -53);signal neuron_model_derivedvariable_conductance_naChans_na_g_in_int : sfixed (-22 downto -53);signal neuron_model_statevariable_none_naChans_na_m_q_out_int : sfixed (18 downto -13);signal neuron_model_statevariable_none_naChans_na_m_q_in_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_none_naChans_na_m_fcond_out_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_none_naChans_na_m_fcond_in_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_per_time_naChans_na_m_forwardRatem1_r_out_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_naChans_na_m_forwardRatem1_r_in_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_naChans_na_m_reverseRatem1_r_out_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in_int : sfixed (18 downto -2);signal neuron_model_statevariable_none_naChans_na_h_q_out_int : sfixed (18 downto -13);signal neuron_model_statevariable_none_naChans_na_h_q_in_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_none_naChans_na_h_fcond_out_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_none_naChans_na_h_fcond_in_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_per_time_naChans_na_h_forwardRateh1_r_out_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_naChans_na_h_forwardRateh1_r_in_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_naChans_na_h_reverseRateh1_r_out_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_current_kChans_i_out_int : sfixed (-28 downto -53);signal neuron_model_derivedvariable_current_kChans_i_in_int : sfixed (-28 downto -53);signal neuron_model_derivedvariable_conductance_kChans_k_g_out_int : sfixed (-22 downto -53);signal neuron_model_derivedvariable_conductance_kChans_k_g_in_int : sfixed (-22 downto -53);signal neuron_model_statevariable_none_kChans_k_n_q_out_int : sfixed (18 downto -13);signal neuron_model_statevariable_none_kChans_k_n_q_in_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_none_kChans_k_n_fcond_out_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_none_kChans_k_n_fcond_in_int : sfixed (18 downto -13);signal neuron_model_derivedvariable_per_time_kChans_k_n_forwardRaten1_r_out_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_kChans_k_n_forwardRaten1_r_in_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_kChans_k_n_reverseRaten1_r_out_int : sfixed (18 downto -2);signal neuron_model_derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in_int : sfixed (18 downto -2);signal neuron_model_statevariable_conductance_synapsemodel_g_out_int : sfixed (-22 downto -53);signal neuron_model_statevariable_conductance_synapsemodel_g_in_int : sfixed (-22 downto -53);signal neuron_model_derivedvariable_current_synapsemodel_i_out_int : sfixed (-28 downto -53);signal neuron_model_derivedvariable_current_synapsemodel_i_in_int : sfixed (-28 downto -53);
 begin
 
 
@@ -321,35 +321,35 @@ neuron_model_uut : neuron_model
 			statevariable_none_naChans_na_m_q_in => neuron_model_statevariable_none_naChans_na_m_q_in_int,
 			derivedvariable_none_naChans_na_m_fcond_out => neuron_model_derivedvariable_none_naChans_na_m_fcond_out_int, 
 			derivedvariable_none_naChans_na_m_fcond_in => neuron_model_derivedvariable_none_naChans_na_m_fcond_in_int,
-			param_per_time_naChans_na_m_reverseRatem1_rate => neuron_model_param_per_time_naChans_na_m_reverseRatem1_rate ,
-			param_voltage_naChans_na_m_reverseRatem1_midpoint => neuron_model_param_voltage_naChans_na_m_reverseRatem1_midpoint ,
-			param_voltage_naChans_na_m_reverseRatem1_scale => neuron_model_param_voltage_naChans_na_m_reverseRatem1_scale ,
-			param_voltage_inv_naChans_na_m_reverseRatem1_scale_inv => neuron_model_param_voltage_inv_naChans_na_m_reverseRatem1_scale_inv ,
-			derivedvariable_per_time_naChans_na_m_reverseRatem1_r_out => neuron_model_derivedvariable_per_time_naChans_na_m_reverseRatem1_r_out_int, 
-			derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in => neuron_model_derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in_int,
 			param_per_time_naChans_na_m_forwardRatem1_rate => neuron_model_param_per_time_naChans_na_m_forwardRatem1_rate ,
 			param_voltage_naChans_na_m_forwardRatem1_midpoint => neuron_model_param_voltage_naChans_na_m_forwardRatem1_midpoint ,
 			param_voltage_naChans_na_m_forwardRatem1_scale => neuron_model_param_voltage_naChans_na_m_forwardRatem1_scale ,
 			param_voltage_inv_naChans_na_m_forwardRatem1_scale_inv => neuron_model_param_voltage_inv_naChans_na_m_forwardRatem1_scale_inv ,
 			derivedvariable_per_time_naChans_na_m_forwardRatem1_r_out => neuron_model_derivedvariable_per_time_naChans_na_m_forwardRatem1_r_out_int,
 			derivedvariable_per_time_naChans_na_m_forwardRatem1_r_in => neuron_model_derivedvariable_per_time_naChans_na_m_forwardRatem1_r_in_int,
+			param_per_time_naChans_na_m_reverseRatem1_rate => neuron_model_param_per_time_naChans_na_m_reverseRatem1_rate ,
+			param_voltage_naChans_na_m_reverseRatem1_midpoint => neuron_model_param_voltage_naChans_na_m_reverseRatem1_midpoint ,
+			param_voltage_naChans_na_m_reverseRatem1_scale => neuron_model_param_voltage_naChans_na_m_reverseRatem1_scale ,
+			param_voltage_inv_naChans_na_m_reverseRatem1_scale_inv => neuron_model_param_voltage_inv_naChans_na_m_reverseRatem1_scale_inv ,
+			derivedvariable_per_time_naChans_na_m_reverseRatem1_r_out => neuron_model_derivedvariable_per_time_naChans_na_m_reverseRatem1_r_out_int, 
+			derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in => neuron_model_derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in_int,
 			param_none_naChans_na_h_instances => neuron_model_param_none_naChans_na_h_instances ,
 			statevariable_none_naChans_na_h_q_out => neuron_model_statevariable_none_naChans_na_h_q_out_int,
 			statevariable_none_naChans_na_h_q_in => neuron_model_statevariable_none_naChans_na_h_q_in_int,
 			derivedvariable_none_naChans_na_h_fcond_out => neuron_model_derivedvariable_none_naChans_na_h_fcond_out_int, 
 			derivedvariable_none_naChans_na_h_fcond_in => neuron_model_derivedvariable_none_naChans_na_h_fcond_in_int,
-			param_per_time_naChans_na_h_reverseRateh1_rate => neuron_model_param_per_time_naChans_na_h_reverseRateh1_rate ,
-			param_voltage_naChans_na_h_reverseRateh1_midpoint => neuron_model_param_voltage_naChans_na_h_reverseRateh1_midpoint ,
-			param_voltage_naChans_na_h_reverseRateh1_scale => neuron_model_param_voltage_naChans_na_h_reverseRateh1_scale ,
-			param_voltage_inv_naChans_na_h_reverseRateh1_scale_inv => neuron_model_param_voltage_inv_naChans_na_h_reverseRateh1_scale_inv ,
-			derivedvariable_per_time_naChans_na_h_reverseRateh1_r_out => neuron_model_derivedvariable_per_time_naChans_na_h_reverseRateh1_r_out_int, 
-			derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in => neuron_model_derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in_int,
 			param_per_time_naChans_na_h_forwardRateh1_rate => neuron_model_param_per_time_naChans_na_h_forwardRateh1_rate ,
 			param_voltage_naChans_na_h_forwardRateh1_midpoint => neuron_model_param_voltage_naChans_na_h_forwardRateh1_midpoint ,
 			param_voltage_naChans_na_h_forwardRateh1_scale => neuron_model_param_voltage_naChans_na_h_forwardRateh1_scale ,
 			param_voltage_inv_naChans_na_h_forwardRateh1_scale_inv => neuron_model_param_voltage_inv_naChans_na_h_forwardRateh1_scale_inv ,
 			derivedvariable_per_time_naChans_na_h_forwardRateh1_r_out => neuron_model_derivedvariable_per_time_naChans_na_h_forwardRateh1_r_out_int, 
 			derivedvariable_per_time_naChans_na_h_forwardRateh1_r_in => neuron_model_derivedvariable_per_time_naChans_na_h_forwardRateh1_r_in_int,
+			param_per_time_naChans_na_h_reverseRateh1_rate => neuron_model_param_per_time_naChans_na_h_reverseRateh1_rate ,
+			param_voltage_naChans_na_h_reverseRateh1_midpoint => neuron_model_param_voltage_naChans_na_h_reverseRateh1_midpoint ,
+			param_voltage_naChans_na_h_reverseRateh1_scale => neuron_model_param_voltage_naChans_na_h_reverseRateh1_scale ,
+			param_voltage_inv_naChans_na_h_reverseRateh1_scale_inv => neuron_model_param_voltage_inv_naChans_na_h_reverseRateh1_scale_inv ,
+			derivedvariable_per_time_naChans_na_h_reverseRateh1_r_out => neuron_model_derivedvariable_per_time_naChans_na_h_reverseRateh1_r_out_int, 
+			derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in => neuron_model_derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in_int,
 			param_none_kChans_number => neuron_model_param_none_kChans_number ,
 			param_voltage_kChans_erev => neuron_model_param_voltage_kChans_erev ,
 			derivedvariable_current_kChans_i_out => neuron_model_derivedvariable_current_kChans_i_out_int, 
@@ -362,18 +362,18 @@ neuron_model_uut : neuron_model
 			statevariable_none_kChans_k_n_q_in => neuron_model_statevariable_none_kChans_k_n_q_in_int,
 			derivedvariable_none_kChans_k_n_fcond_out => neuron_model_derivedvariable_none_kChans_k_n_fcond_out_int, 
 			derivedvariable_none_kChans_k_n_fcond_in => neuron_model_derivedvariable_none_kChans_k_n_fcond_in_int,
-			param_per_time_kChans_k_n_reverseRaten1_rate => neuron_model_param_per_time_kChans_k_n_reverseRaten1_rate ,
-			param_voltage_kChans_k_n_reverseRaten1_midpoint => neuron_model_param_voltage_kChans_k_n_reverseRaten1_midpoint ,
-			param_voltage_kChans_k_n_reverseRaten1_scale => neuron_model_param_voltage_kChans_k_n_reverseRaten1_scale ,
-			param_voltage_inv_kChans_k_n_reverseRaten1_scale_inv => neuron_model_param_voltage_inv_kChans_k_n_reverseRaten1_scale_inv ,
-			derivedvariable_per_time_kChans_k_n_reverseRaten1_r_out => neuron_model_derivedvariable_per_time_kChans_k_n_reverseRaten1_r_out_int, 
-			derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in => neuron_model_derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in_int,
 			param_per_time_kChans_k_n_forwardRaten1_rate => neuron_model_param_per_time_kChans_k_n_forwardRaten1_rate ,
 			param_voltage_kChans_k_n_forwardRaten1_midpoint => neuron_model_param_voltage_kChans_k_n_forwardRaten1_midpoint ,
 			param_voltage_kChans_k_n_forwardRaten1_scale => neuron_model_param_voltage_kChans_k_n_forwardRaten1_scale ,
 			param_voltage_inv_kChans_k_n_forwardRaten1_scale_inv => neuron_model_param_voltage_inv_kChans_k_n_forwardRaten1_scale_inv ,
 			derivedvariable_per_time_kChans_k_n_forwardRaten1_r_out => neuron_model_derivedvariable_per_time_kChans_k_n_forwardRaten1_r_out_int,
 			derivedvariable_per_time_kChans_k_n_forwardRaten1_r_in => neuron_model_derivedvariable_per_time_kChans_k_n_forwardRaten1_r_in_int,
+			param_per_time_kChans_k_n_reverseRaten1_rate => neuron_model_param_per_time_kChans_k_n_reverseRaten1_rate ,
+			param_voltage_kChans_k_n_reverseRaten1_midpoint => neuron_model_param_voltage_kChans_k_n_reverseRaten1_midpoint ,
+			param_voltage_kChans_k_n_reverseRaten1_scale => neuron_model_param_voltage_kChans_k_n_reverseRaten1_scale ,
+			param_voltage_inv_kChans_k_n_reverseRaten1_scale_inv => neuron_model_param_voltage_inv_kChans_k_n_reverseRaten1_scale_inv ,
+			derivedvariable_per_time_kChans_k_n_reverseRaten1_r_out => neuron_model_derivedvariable_per_time_kChans_k_n_reverseRaten1_r_out_int, 
+			derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in => neuron_model_derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in_int,
 			param_time_synapsemodel_tauDecay => neuron_model_param_time_synapsemodel_tauDecay ,
 			param_conductance_synapsemodel_gbase => neuron_model_param_conductance_synapsemodel_gbase ,
 			param_voltage_synapsemodel_erev => neuron_model_param_voltage_synapsemodel_erev ,
@@ -473,18 +473,18 @@ store_state: process (clk)
 			neuron_model_derivedvariable_conductance_naChans_na_g_in_int <= neuron_model_stateRESTORE_conductance_naChans_na_g;
 			neuron_model_statevariable_none_naChans_na_m_q_in_int <= neuron_model_stateRESTORE_none_naChans_na_m_q;
 			neuron_model_derivedvariable_none_naChans_na_m_fcond_in_int <= neuron_model_stateRESTORE_none_naChans_na_m_fcond;
-			neuron_model_derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in_int <= neuron_model_stateRESTORE_per_time_naChans_na_m_reverseRatem1_r;
 			neuron_model_derivedvariable_per_time_naChans_na_m_forwardRatem1_r_in_int <= neuron_model_stateRESTORE_per_time_naChans_na_m_forwardRatem1_r;
+			neuron_model_derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in_int <= neuron_model_stateRESTORE_per_time_naChans_na_m_reverseRatem1_r;
 			neuron_model_statevariable_none_naChans_na_h_q_in_int <= neuron_model_stateRESTORE_none_naChans_na_h_q;
 			neuron_model_derivedvariable_none_naChans_na_h_fcond_in_int <= neuron_model_stateRESTORE_none_naChans_na_h_fcond;
-			neuron_model_derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in_int <= neuron_model_stateRESTORE_per_time_naChans_na_h_reverseRateh1_r;
 			neuron_model_derivedvariable_per_time_naChans_na_h_forwardRateh1_r_in_int <= neuron_model_stateRESTORE_per_time_naChans_na_h_forwardRateh1_r;
+			neuron_model_derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in_int <= neuron_model_stateRESTORE_per_time_naChans_na_h_reverseRateh1_r;
 			neuron_model_derivedvariable_current_kChans_i_in_int <= neuron_model_stateRESTORE_current_kChans_i;
 			neuron_model_derivedvariable_conductance_kChans_k_g_in_int <= neuron_model_stateRESTORE_conductance_kChans_k_g;
 			neuron_model_statevariable_none_kChans_k_n_q_in_int <= neuron_model_stateRESTORE_none_kChans_k_n_q;
 			neuron_model_derivedvariable_none_kChans_k_n_fcond_in_int <= neuron_model_stateRESTORE_none_kChans_k_n_fcond;
-			neuron_model_derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in_int <= neuron_model_stateRESTORE_per_time_kChans_k_n_reverseRaten1_r;
 			neuron_model_derivedvariable_per_time_kChans_k_n_forwardRaten1_r_in_int <= neuron_model_stateRESTORE_per_time_kChans_k_n_forwardRaten1_r;
+			neuron_model_derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in_int <= neuron_model_stateRESTORE_per_time_kChans_k_n_reverseRaten1_r;
 			neuron_model_statevariable_conductance_synapsemodel_g_in_int <= neuron_model_stateRESTORE_conductance_synapsemodel_g;
 			neuron_model_derivedvariable_current_synapsemodel_i_in_int <= neuron_model_stateRESTORE_current_synapsemodel_i;
 			neuron_model_eventport_out_spike_out <= '0';
@@ -500,18 +500,18 @@ store_state: process (clk)
 			neuron_model_derivedvariable_conductance_naChans_na_g_in_int <= neuron_model_derivedvariable_conductance_naChans_na_g_out_int;
 			neuron_model_statevariable_none_naChans_na_m_q_in_int <= neuron_model_statevariable_none_naChans_na_m_q_out_int;
 			neuron_model_derivedvariable_none_naChans_na_m_fcond_in_int <= neuron_model_derivedvariable_none_naChans_na_m_fcond_out_int;
-			neuron_model_derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in_int <= neuron_model_derivedvariable_per_time_naChans_na_m_reverseRatem1_r_out_int;
 			neuron_model_derivedvariable_per_time_naChans_na_m_forwardRatem1_r_in_int <= neuron_model_derivedvariable_per_time_naChans_na_m_forwardRatem1_r_out_int;
+			neuron_model_derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in_int <= neuron_model_derivedvariable_per_time_naChans_na_m_reverseRatem1_r_out_int;
 			neuron_model_statevariable_none_naChans_na_h_q_in_int <= neuron_model_statevariable_none_naChans_na_h_q_out_int;
 			neuron_model_derivedvariable_none_naChans_na_h_fcond_in_int <= neuron_model_derivedvariable_none_naChans_na_h_fcond_out_int;
-			neuron_model_derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in_int <= neuron_model_derivedvariable_per_time_naChans_na_h_reverseRateh1_r_out_int;
 			neuron_model_derivedvariable_per_time_naChans_na_h_forwardRateh1_r_in_int <= neuron_model_derivedvariable_per_time_naChans_na_h_forwardRateh1_r_out_int;
+			neuron_model_derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in_int <= neuron_model_derivedvariable_per_time_naChans_na_h_reverseRateh1_r_out_int;
 			neuron_model_derivedvariable_current_kChans_i_in_int <= neuron_model_derivedvariable_current_kChans_i_out_int;
 			neuron_model_derivedvariable_conductance_kChans_k_g_in_int <= neuron_model_derivedvariable_conductance_kChans_k_g_out_int;
 			neuron_model_statevariable_none_kChans_k_n_q_in_int <= neuron_model_statevariable_none_kChans_k_n_q_out_int;
 			neuron_model_derivedvariable_none_kChans_k_n_fcond_in_int <= neuron_model_derivedvariable_none_kChans_k_n_fcond_out_int;
-			neuron_model_derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in_int <= neuron_model_derivedvariable_per_time_kChans_k_n_reverseRaten1_r_out_int;
 			neuron_model_derivedvariable_per_time_kChans_k_n_forwardRaten1_r_in_int <= neuron_model_derivedvariable_per_time_kChans_k_n_forwardRaten1_r_out_int;
+			neuron_model_derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in_int <= neuron_model_derivedvariable_per_time_kChans_k_n_reverseRaten1_r_out_int;
 			neuron_model_statevariable_conductance_synapsemodel_g_in_int <= neuron_model_statevariable_conductance_synapsemodel_g_out_int;
 			neuron_model_derivedvariable_current_synapsemodel_i_in_int <= neuron_model_derivedvariable_current_synapsemodel_i_out_int;
 
@@ -531,18 +531,18 @@ end if;
 			neuron_model_stateCURRENT_conductance_naChans_na_g <= neuron_model_derivedvariable_conductance_naChans_na_g_in_int;
 			neuron_model_stateCURRENT_none_naChans_na_m_q <= neuron_model_statevariable_none_naChans_na_m_q_in_int;
 			neuron_model_stateCURRENT_none_naChans_na_m_fcond <= neuron_model_derivedvariable_none_naChans_na_m_fcond_in_int;
-			neuron_model_stateCURRENT_per_time_naChans_na_m_reverseRatem1_r <= neuron_model_derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in_int;
 			neuron_model_stateCURRENT_per_time_naChans_na_m_forwardRatem1_r <= neuron_model_derivedvariable_per_time_naChans_na_m_forwardRatem1_r_in_int;
+			neuron_model_stateCURRENT_per_time_naChans_na_m_reverseRatem1_r <= neuron_model_derivedvariable_per_time_naChans_na_m_reverseRatem1_r_in_int;
 			neuron_model_stateCURRENT_none_naChans_na_h_q <= neuron_model_statevariable_none_naChans_na_h_q_in_int;
 			neuron_model_stateCURRENT_none_naChans_na_h_fcond <= neuron_model_derivedvariable_none_naChans_na_h_fcond_in_int;
-			neuron_model_stateCURRENT_per_time_naChans_na_h_reverseRateh1_r <= neuron_model_derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in_int;
 			neuron_model_stateCURRENT_per_time_naChans_na_h_forwardRateh1_r <= neuron_model_derivedvariable_per_time_naChans_na_h_forwardRateh1_r_in_int;
+			neuron_model_stateCURRENT_per_time_naChans_na_h_reverseRateh1_r <= neuron_model_derivedvariable_per_time_naChans_na_h_reverseRateh1_r_in_int;
 			neuron_model_stateCURRENT_current_kChans_i <= neuron_model_derivedvariable_current_kChans_i_in_int;
 			neuron_model_stateCURRENT_conductance_kChans_k_g <= neuron_model_derivedvariable_conductance_kChans_k_g_in_int;
 			neuron_model_stateCURRENT_none_kChans_k_n_q <= neuron_model_statevariable_none_kChans_k_n_q_in_int;
 			neuron_model_stateCURRENT_none_kChans_k_n_fcond <= neuron_model_derivedvariable_none_kChans_k_n_fcond_in_int;
-			neuron_model_stateCURRENT_per_time_kChans_k_n_reverseRaten1_r <= neuron_model_derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in_int;
 			neuron_model_stateCURRENT_per_time_kChans_k_n_forwardRaten1_r <= neuron_model_derivedvariable_per_time_kChans_k_n_forwardRaten1_r_in_int;
+			neuron_model_stateCURRENT_per_time_kChans_k_n_reverseRaten1_r <= neuron_model_derivedvariable_per_time_kChans_k_n_reverseRaten1_r_in_int;
 			neuron_model_stateCURRENT_conductance_synapsemodel_g <= neuron_model_statevariable_conductance_synapsemodel_g_in_int;
 			neuron_model_stateCURRENT_current_synapsemodel_i <= neuron_model_derivedvariable_current_synapsemodel_i_in_int;
 

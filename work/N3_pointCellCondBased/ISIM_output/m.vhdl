@@ -35,13 +35,6 @@ Port (
   statevariable_none_q_in : in sfixed (18 downto -13);
   derivedvariable_none_fcond_out : out sfixed (18 downto -13);
   derivedvariable_none_fcond_in : in sfixed (18 downto -13);
-  param_per_time_reverseRatem1_rate : in sfixed (18 downto -2);
-  param_voltage_reverseRatem1_midpoint : in sfixed (2 downto -22);
-  param_voltage_reverseRatem1_scale : in sfixed (2 downto -22);
-  param_voltage_inv_reverseRatem1_scale_inv : in sfixed (22 downto -2);
-  exposure_per_time_reverseRatem1_r : out sfixed (18 downto -2);
-  derivedvariable_per_time_reverseRatem1_r_out : out sfixed (18 downto -2);
-  derivedvariable_per_time_reverseRatem1_r_in : in sfixed (18 downto -2);
   param_per_time_forwardRatem1_rate : in sfixed (18 downto -2);
   param_voltage_forwardRatem1_midpoint : in sfixed (2 downto -22);
   param_voltage_forwardRatem1_scale : in sfixed (2 downto -22);
@@ -49,6 +42,13 @@ Port (
   exposure_per_time_forwardRatem1_r : out sfixed (18 downto -2);
   derivedvariable_per_time_forwardRatem1_r_out : out sfixed (18 downto -2);
   derivedvariable_per_time_forwardRatem1_r_in : in sfixed (18 downto -2);
+  param_per_time_reverseRatem1_rate : in sfixed (18 downto -2);
+  param_voltage_reverseRatem1_midpoint : in sfixed (2 downto -22);
+  param_voltage_reverseRatem1_scale : in sfixed (2 downto -22);
+  param_voltage_inv_reverseRatem1_scale_inv : in sfixed (22 downto -2);
+  exposure_per_time_reverseRatem1_r : out sfixed (18 downto -2);
+  derivedvariable_per_time_reverseRatem1_r_out : out sfixed (18 downto -2);
+  derivedvariable_per_time_reverseRatem1_r_in : in sfixed (18 downto -2);
   sysparam_time_timestep : in sfixed (-6 downto -22);
   sysparam_time_simtime : in sfixed (6 downto -22)
 );
@@ -140,26 +140,6 @@ signal statevariable_none_q_next : sfixed (18 downto -13);
 ---------------------------------------------------------------------
 -- Child Components
 ---------------------------------------------------------------------
-component reverseRatem1 
-Port (
-  clk : in STD_LOGIC; --SYSTEM CLOCK, THIS ITSELF DOES NOT SIGNIFY TIME STEPS - AKA A SINGLE TIMESTEP MAY TAKE MANY CLOCK CYCLES
-  init_model : in STD_LOGIC;
-  step_once_go : in STD_LOGIC; --signals to the neuron from the core that a time step is to be simulated
-  Component_done : out STD_LOGIC;
-  requirement_voltage_v : in sfixed (2 downto -22);
-  param_per_time_rate : in sfixed (18 downto -2);
-  param_voltage_midpoint : in sfixed (2 downto -22);
-  param_voltage_scale : in sfixed (2 downto -22);
-  param_voltage_inv_scale_inv : in sfixed (22 downto -2);
-  exposure_per_time_r : out sfixed (18 downto -2);
-  derivedvariable_per_time_r_out : out sfixed (18 downto -2);
-  derivedvariable_per_time_r_in : in sfixed (18 downto -2);
-  sysparam_time_timestep : in sfixed (-6 downto -22);
-  sysparam_time_simtime : in sfixed (6 downto -22)
-);
-end component;
-signal reverseRatem1_Component_done : STD_LOGIC ; signal Exposure_per_time_reverseRatem1_r_internal : sfixed (18 downto -2);
----------------------------------------------------------------------
 component forwardRatem1 
 Port (
   clk : in STD_LOGIC; --SYSTEM CLOCK, THIS ITSELF DOES NOT SIGNIFY TIME STEPS - AKA A SINGLE TIMESTEP MAY TAKE MANY CLOCK CYCLES
@@ -180,6 +160,26 @@ Port (
 end component;
 signal forwardRatem1_Component_done : STD_LOGIC ; signal Exposure_per_time_forwardRatem1_r_internal : sfixed (18 downto -2);
 ---------------------------------------------------------------------
+component reverseRatem1 
+Port (
+  clk : in STD_LOGIC; --SYSTEM CLOCK, THIS ITSELF DOES NOT SIGNIFY TIME STEPS - AKA A SINGLE TIMESTEP MAY TAKE MANY CLOCK CYCLES
+  init_model : in STD_LOGIC;
+  step_once_go : in STD_LOGIC; --signals to the neuron from the core that a time step is to be simulated
+  Component_done : out STD_LOGIC;
+  requirement_voltage_v : in sfixed (2 downto -22);
+  param_per_time_rate : in sfixed (18 downto -2);
+  param_voltage_midpoint : in sfixed (2 downto -22);
+  param_voltage_scale : in sfixed (2 downto -22);
+  param_voltage_inv_scale_inv : in sfixed (22 downto -2);
+  exposure_per_time_r : out sfixed (18 downto -2);
+  derivedvariable_per_time_r_out : out sfixed (18 downto -2);
+  derivedvariable_per_time_r_in : in sfixed (18 downto -2);
+  sysparam_time_timestep : in sfixed (-6 downto -22);
+  sysparam_time_simtime : in sfixed (6 downto -22)
+);
+end component;
+signal reverseRatem1_Component_done : STD_LOGIC ; signal Exposure_per_time_reverseRatem1_r_internal : sfixed (18 downto -2);
+---------------------------------------------------------------------
 ---------------------------------------------------------------------
 -- Begin Internal Processes
 ---------------------------------------------------------------------
@@ -188,24 +188,6 @@ begin
 ---------------------------------------------------------------------
 -- Child EDComponent Instantiations and corresponding internal variables
 ---------------------------------------------------------------------
-reverseRatem1_uut : reverseRatem1 
-port map (
-  clk => clk,
-  init_model => init_model,
-  step_once_go => step_once_go,
-  Component_done => reverseRatem1_Component_done,
-  param_per_time_rate => param_per_time_reverseRatem1_rate,
-  param_voltage_midpoint => param_voltage_reverseRatem1_midpoint,
-  param_voltage_scale => param_voltage_reverseRatem1_scale,
-  param_voltage_inv_scale_inv => param_voltage_inv_reverseRatem1_scale_inv,
-  requirement_voltage_v => requirement_voltage_v,
-  Exposure_per_time_r => Exposure_per_time_reverseRatem1_r_internal,
-  derivedvariable_per_time_r_out => derivedvariable_per_time_reverseRatem1_r_out,
-  derivedvariable_per_time_r_in => derivedvariable_per_time_reverseRatem1_r_in,
-  sysparam_time_timestep => sysparam_time_timestep,
-  sysparam_time_simtime => sysparam_time_simtime
-);
-Exposure_per_time_reverseRatem1_r <= Exposure_per_time_reverseRatem1_r_internal;
 forwardRatem1_uut : forwardRatem1 
 port map (
   clk => clk,
@@ -224,6 +206,24 @@ port map (
   sysparam_time_simtime => sysparam_time_simtime
 );
 Exposure_per_time_forwardRatem1_r <= Exposure_per_time_forwardRatem1_r_internal;
+reverseRatem1_uut : reverseRatem1 
+port map (
+  clk => clk,
+  init_model => init_model,
+  step_once_go => step_once_go,
+  Component_done => reverseRatem1_Component_done,
+  param_per_time_rate => param_per_time_reverseRatem1_rate,
+  param_voltage_midpoint => param_voltage_reverseRatem1_midpoint,
+  param_voltage_scale => param_voltage_reverseRatem1_scale,
+  param_voltage_inv_scale_inv => param_voltage_inv_reverseRatem1_scale_inv,
+  requirement_voltage_v => requirement_voltage_v,
+  Exposure_per_time_r => Exposure_per_time_reverseRatem1_r_internal,
+  derivedvariable_per_time_r_out => derivedvariable_per_time_reverseRatem1_r_out,
+  derivedvariable_per_time_r_in => derivedvariable_per_time_reverseRatem1_r_in,
+  sysparam_time_timestep => sysparam_time_timestep,
+  sysparam_time_simtime => sysparam_time_simtime
+);
+Exposure_per_time_reverseRatem1_r <= Exposure_per_time_reverseRatem1_r_internal;
 
 derived_variable_pre_process_comb :process ( sysparam_time_timestep,exposure_per_time_forwardRatem1_r_internal,exposure_per_time_reverseRatem1_r_internal, param_none_instances, statevariable_none_q_in ,pow_fcond_power_result1, derivedvariable_per_time_alpha_next , derivedvariable_per_time_beta_next , derivedvariable_none_rateScale_next , derivedvariable_per_time_alpha_next , derivedvariable_per_time_beta_next  )
 begin 
@@ -269,7 +269,7 @@ begin
   derivedvariable_time_tau_next <= resize(( to_sfixed ( 1 ,1 , -1 ) / (  ( derivedvariable_per_time_alpha_next + derivedvariable_per_time_beta_next )   )  ),6,-18);
 end process derived_variable_process_comb;
 uut_delayDone_derivedvariable_m : delayDone GENERIC MAP(
-  Steps => 10
+  Steps => 2
   )
 PORT MAP(
   clk => clk,
@@ -292,7 +292,7 @@ end if;
 end process derived_variable_process_syn;
 ---------------------------------------------------------------------
 
-dynamics_pre_process_comb :process ( sysparam_time_timestep, statevariable_none_q_in , derivedvariable_none_inf , derivedvariable_time_tau   )
+dynamics_pre_process_comb :process ( sysparam_time_timestep, statevariable_none_q_in , derivedvariable_time_tau , derivedvariable_none_inf   )
 begin 
 
 end process dynamics_pre_process_comb;
@@ -308,12 +308,12 @@ end process dynamics_pre_process_syn;
 --No dynamics with complex equations found
 subprocess_dyn_int_ready <= '1';
 
-state_variable_process_dynamics_comb :process (sysparam_time_timestep, statevariable_none_q_in , derivedvariable_none_inf , derivedvariable_time_tau  ,statevariable_none_q_in)
+state_variable_process_dynamics_comb :process (sysparam_time_timestep, statevariable_none_q_in , derivedvariable_time_tau , derivedvariable_none_inf  ,statevariable_none_q_in)
 begin
   statevariable_none_noregime_q_temp_1_next <= resize(statevariable_none_q_in + (   (  derivedvariable_none_inf - statevariable_none_q_in  )   / derivedvariable_time_tau ) * sysparam_time_timestep,18,-13);
 end process state_variable_process_dynamics_comb;
 uut_delayDone_statevariable_m : delayDone GENERIC MAP(
-  Steps => 10
+  Steps => 2
   )
 PORT MAP(
   clk => clk,
@@ -336,7 +336,7 @@ end process state_variable_process_dynamics_syn;
 ---------------------------------------------------------------------
 	-- EDState variable: $par.name Driver Process
 	---------------------------------------------------------------------
-state_variable_process_comb_0 :process (sysparam_time_timestep,init_model,derivedvariable_none_inf,statevariable_none_noregime_q_temp_1,statevariable_none_q_in,derivedvariable_none_inf,derivedvariable_time_tau)
+state_variable_process_comb_0 :process (sysparam_time_timestep,init_model,derivedvariable_none_inf,statevariable_none_noregime_q_temp_1,statevariable_none_q_in,derivedvariable_time_tau,derivedvariable_none_inf)
 variable statevariable_none_q_temp_1 : sfixed (18 downto -13);
 begin
   statevariable_none_q_temp_1 := statevariable_none_noregime_q_temp_1;    statevariable_none_q_next <= statevariable_none_q_temp_1;
@@ -419,9 +419,9 @@ begin
     end if;
   end if;
 end process count_proc;
-childrenCombined_component_done_process:process(reverseRatem1_component_done,forwardRatem1_component_done,CLK)
+childrenCombined_component_done_process:process(forwardRatem1_component_done,reverseRatem1_component_done,CLK)
 begin
-  if (reverseRatem1_component_done = '1' and forwardRatem1_component_done = '1') then
+  if (forwardRatem1_component_done = '1' and reverseRatem1_component_done = '1') then
     childrenCombined_component_done <= '1';
   else
     childrenCombined_component_done <= '0';

@@ -119,7 +119,7 @@ begin
 -- Child EDComponent Instantiations and corresponding internal variables
 ---------------------------------------------------------------------
 
-derived_variable_pre_process_comb :process ( sysparam_time_timestep, param_voltage_midpoint, requirement_voltage_v , param_voltage_scale, param_per_time_rate,param_voltage_inv_scale_inv,exp_r_exponential_result1 )
+derived_variable_pre_process_comb :process ( sysparam_time_timestep, param_voltage_midpoint, param_voltage_scale, requirement_voltage_v , param_per_time_rate,param_voltage_inv_scale_inv,exp_r_exponential_result1 )
 begin 
   pre_exp_r_exponential_result1_next <=  resize(   (  to_sfixed ( 0 ,0 , -1 ) -   (  requirement_voltage_v - param_voltage_midpoint  )  * param_voltage_inv_scale_inv  ) ,18,-13);
 
@@ -156,12 +156,12 @@ port map (	clk => clk,
 
 
 
-derived_variable_process_comb :process ( sysparam_time_timestep, param_voltage_midpoint, requirement_voltage_v , param_voltage_scale, param_per_time_rate,param_voltage_inv_scale_inv,exp_r_exponential_result1 )
+derived_variable_process_comb :process ( sysparam_time_timestep, param_voltage_midpoint, param_voltage_scale, requirement_voltage_v , param_per_time_rate,param_voltage_inv_scale_inv,exp_r_exponential_result1 )
 begin
   derivedvariable_per_time_r_next <= resize(( param_per_time_rate /   (  to_sfixed ( 1 ,1 , -1 ) + exp_r_exponential_result1   )   ),18,-2);
 end process derived_variable_process_comb;
 uut_delayDone_derivedvariable_reverseRateh1 : delayDone GENERIC MAP(
-  Steps => 10
+  Steps => 2
   )
 PORT MAP(
   clk => clk,
